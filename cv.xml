@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mathbook>
+  <docinfo>
+    <!--<brandlogo url="http://mathbook.pugetsound.edu" source="images/book-cover-google-art-project.jpg" />-->
+    <macros>
+% useful
+\newcommand{\ignore}[1]{}
+
+% analysis/geometry stuff
+\newcommand{\ann}{\operatorname{ann}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Orb}{\operatorname{Orb}}
+\newcommand{\hol}{\operatorname{hol}}
+\newcommand{\aut}{\operatorname{aut}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\sing}{\operatorname{sing}}
+\newcommand{\Arg}{\operatorname{Arg}}
+\newcommand{\Log}{\operatorname{Log}}
+
+% reals
+\newcommand{\esssup}{\operatorname{ess~sup}}
+\newcommand{\essran}{\operatorname{essran}}
+\newcommand{\innprod}[2]{\langle #1 | #2 \rangle}
+\newcommand{\linnprod}[2]{\langle #1 , #2 \rangle}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\sabs}[1]{\lvert {#1} \rvert}
+\newcommand{\snorm}[1]{\lVert {#1} \rVert}
+\newcommand{\abs}[1]{\left\lvert {#1} \right\rvert}
+\newcommand{\norm}[1]{\left\lVert {#1} \right\rVert}
+
+% sets (some)
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\D}{{\mathbb{D}}}
+\newcommand{\F}{{\mathbb{F}}}
+
+% consistent
+\newcommand{\bB}{{\mathbb{B}}}
+\newcommand{\bC}{{\mathbb{C}}}
+\newcommand{\bR}{{\mathbb{R}}}
+\newcommand{\bZ}{{\mathbb{Z}}}
+\newcommand{\bN}{{\mathbb{N}}}
+\newcommand{\bQ}{{\mathbb{Q}}}
+\newcommand{\bD}{{\mathbb{D}}}
+\newcommand{\bF}{{\mathbb{F}}}
+\newcommand{\bH}{{\mathbb{H}}}
+\newcommand{\bO}{{\mathbb{O}}}
+\newcommand{\bP}{{\mathbb{P}}}
+\newcommand{\bK}{{\mathbb{K}}}
+\newcommand{\bV}{{\mathbb{V}}}
+\newcommand{\CP}{{\mathbb{CP}}}
+\newcommand{\RP}{{\mathbb{RP}}}
+\newcommand{\HP}{{\mathbb{HP}}}
+\newcommand{\OP}{{\mathbb{OP}}}
+\newcommand{\sA}{{\mathcal{A}}}
+\newcommand{\sB}{{\mathcal{B}}}
+\newcommand{\sC}{{\mathcal{C}}}
+\newcommand{\sF}{{\mathcal{F}}}
+\newcommand{\sG}{{\mathcal{G}}}
+\newcommand{\sH}{{\mathcal{H}}}
+\newcommand{\sM}{{\mathcal{M}}}
+\newcommand{\sO}{{\mathcal{O}}}
+\newcommand{\sP}{{\mathcal{P}}}
+\newcommand{\sQ}{{\mathcal{Q}}}
+\newcommand{\sR}{{\mathcal{R}}}
+\newcommand{\sS}{{\mathcal{S}}}
+\newcommand{\sI}{{\mathcal{I}}}
+\newcommand{\sL}{{\mathcal{L}}}
+\newcommand{\sK}{{\mathcal{K}}}
+\newcommand{\sU}{{\mathcal{U}}}
+\newcommand{\sV}{{\mathcal{V}}}
+\newcommand{\sX}{{\mathcal{X}}}
+\newcommand{\sY}{{\mathcal{Y}}}
+\newcommand{\sZ}{{\mathcal{Z}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+
+\newcommand{\interior}{\operatorname{int}}
+
+% Topo stuff
+\newcommand{\id}{\textit{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Torsion}{\operatorname{Torsion}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+%extra thingies
+\newcommand{\mapsfrom}{\ensuremath{\text{\reflectbox{$\mapsto$}}}}
+\newcommand{\from}{\ensuremath{\leftarrow}}
+\newcommand{\dhat}[1]{\hat{\hat{#1}}}
+\newcommand{\spn}{\operatorname{span}}
+    </macros>
+    <latex-image-preamble>
+    </latex-image-preamble>
+    <initialism>CV</initialism>
+  </docinfo>
+
+  <book xml:id="cv">
+    <title>Complex Variable Lectures</title>
+    <!--<subtitle>Subtitolo</subtitle>-->
+
+    <frontmatter>
+      <titlepage>
+        <author>
+          <personname>Jiří Lebl</personname>
+          <department>Department of Mathematics</department>
+          <institution>
+            <line>Oklahoma State University</line>
+            <line>Stillwater, OK, USA</line>
+          </institution>
+          <email>lebl@math.okstate.edu</email>
+        </author>
+
+        <date><today /></date>
+
+      </titlepage>
+
+      <!--colophon here-->
+
+    </frontmatter>
+
+    <chapter xml:id="cplxnumberschap">
+      <title>Complex Numbers</title>
+
+      <section xml:id="cplxnumberssec">
+        <title>Complex Numbers</title>
+
+	<blockquote>
+	  <p>
+	    Le plus court chemin entre deux vérités dans le domaine réel passe par le domaine complexe.
+	  </p>
+	  <p>
+	    Between two truths of the real domain, the easiest and shortest path quite often passes through the complex domain.
+	  </p>
+	  <attribution>Jacques Hadamard</attribution>
+	</blockquote>
+
+	<p>
+	  One of the basic problem in mathematics is solving equations.
+	  Equation such as <m>x+2=3</m> we could solve in antiquity,
+	  <m>x=1</m>, we could do with just integers.  A little harder one is
+	  <m>2x = 3</m>, now we need fractions (rational numbers) to find the
+	  solution of <m>x=\frac{3}{2}</m>, again we could do this since
+	  antiquity.  Notice that it is in some sense cheating, we simply said
+	  <q>there has to be a number we get when we divide 3 by
+	    2, and so we will call it <m>\frac{3}{2}</m>.</q>  The equation
+	  <m>x^2=2</m> presents another conundrum, since on one hand as it is 
+	  the length of the diagonal of a square tile of side one, we are
+	  convinced that such a number exists, and yet it was known to ancient
+	  greeks already that there is no fraction that will work.
+	  But again we solve it by cheating a little.  We call this number
+	  <em>the square root of 2</em> which just means <q>the number which
+	  when we square we get 2</q>.
+	  OK, we got out of those difficulties relatively easy.
+	  The equation <m>x+1=1</m> turnes out to be a bit harder
+	  than you would have thought from the modern perspective,
+	  as it took people quite some time to
+	  treat zero as a number.  Next, an equation such as
+	  <m>x+3=2</m> was a problem until about the middle ages,
+	  when we decided to just bite the bullet and think of <em>negative
+	    numbers</em> as <q>numbers</q>.  Nowadays you find negative
+	  numbers everywhere, quantities such as temperature can be negative.
+	  But at one time people didn't think of these as actual numbers.
+	</p>
+
+	<p>
+	  All the numbers we saw up till now were <em>real numbers</em>.
+	  The real numbers are those numbers that can be represented as points
+	  on an infinite line.  We have algebraic operations of addition and
+	  multiplication, and the real numbers satisfy many nice algebraic
+	  properties (they are a <em>field</em> if you heard this term).
+	</p>
+
+	<p>
+	  The real numbers are a wonderful set of numbers and we so wish
+	  that we could work with them, but then
+	  we try to solve the equation <m>x^2=-1</m>, and we are in
+	  trouble again.  There is no real number whose square is <m>-1</m>
+	  since the square of a real number is never negative.  Fear not, we
+	  have gotten out of this trouble before, we will just <q>invent</q>
+	  a new number.  Let us call it <m>i</m>, although some people,
+	  especially engineers, will call it <m>j</m>, and some people will
+	  even just always write <m>\sqrt{-1}</m> instead of <m>i</m>, but we
+	  are lazy.
+	</p>
+
+	<p>
+	  We simply start with the real numbers and we throw in 
+	  <m>i</m> as if it were an unknown and we call the result the
+	  <idx>complex numbers</idx>
+	  <term>complex numbers</term>.  Then, whenever we can simplify
+	  with <m>i^2=-1</m>, we do so.  For example:
+	  <me>
+	    {(1+3i)}^2 = 1 + 6i +9i^2 = 1 + 6i - 9 = -8 + 6i .
+	  </me>
+	  A little bit of thought reveals that if we think of the operations of
+	  multiplications and addition, we can write all of the <em>complex
+	    numbers</em> as
+	  <me>
+	    x+iy
+	  </me>
+	  where <m>x</m> and <m>y</m> are real numbers.  We will usually use
+	  the letter <m>z</m> or <m>w</m> for complex numbers.  That is, we
+	  write <m>z=x+iy</m>.  Similarly we will generally use 
+	  <m>x</m> and <m>y</m> for real numbers.  If <m>z=x+iy</m>,
+	  the number <m>x</m> is called the <idx>real part</idx><term>real part</term> and
+	  the number <m>y</m> is called the <idx>imaginary part</idx><term>imaginary part</term>.  We use
+	  the notation
+	  <me>
+	    \Re z = \Re (x+iy) = x, \qquad \Im z = \Im (x+iy) = y.
+	  </me>
+	  For example <m>\Re (3-5i) = 3</m> and
+	  <m>\Im (3-5i) = -5</m>.
+	</p>
+
+	<p>
+	  The terminology real, complex, and imaginary is perhaps misleading.
+	  There is nothing more imaginary about <m>i</m> then there is
+	  about negative real numbers.  They simply appear in different
+	  applications.
+	</p>
+
+	<p>
+	  By working out the expressions we arrive at
+	  <me>
+	    (x+iy)+(a+ib) = (x+a) + i(y+b)
+	  </me>
+	  <me>
+	    (x+iy)(a+ib) = (xa-yb) + i(xb+ya) .
+	  </me>
+	  We can also work out the additive and multiplicative inverses.
+	  The additive, that is <m>-z</m> is really easy:
+	  Notice <m>(x+iy)+(-x-iy) = 0</m>, so <m>-(x+iy) = -x-iy</m>.
+	  The multiplicative is somewhat more difficult.
+	  Given a nonzero <m>z</m> we wish to find <m>z^{-1}</m>
+	  such that <m>zz^{-1} = 1</m>.  It turns out that 
+	  if <m>x+iy \not=0</m>, that is if at least one of <m>x</m>
+	  or <m>y</m> is nonzero, then
+	  <me>
+	    {(x+iy)}^{-1} = \frac{1}{x+iy} =
+	    \frac{x-iy}{x^2+y^2} =
+	    \frac{x}{x^2+y^2} - i \frac{y}{x^2+y^2}.
+	  </me>
+	</p>
+	<p>
+	  Notice that <m>x-iy</m> in the above formula.  This is an important
+	  enough operation that we give it a name and notation.
+	  The <idx>complex conjugate</idx><term>complex conjugate</term> or perhaps just
+	  <idx>conjugate</idx><term>conjugate</term>.
+	  This operation is really new for complex numbers and
+	  you have not seen for real numbers.  We usually write it
+	  with a bar over the number.
+	  <me>
+	    \bar{z} = \overline{x+iy} = x-iy .
+	  </me>
+	  That is, you simply flip the sign of the imaginary part.
+	</p>
+
+	<p>
+	  Complex numbers are a <em>field</em> just like the real numbers.
+	  As the real numbers are just part of the complex numbers we still
+	  have 0 and 1.  We have additive and multiplicative inverses (see
+	  above).
+	  And they satisfy the following properties
+	  <ol>
+	    <li>
+	      <em>Associative laws: </em>
+	      <m>z_1+(z_2+z_3) = (z_1+z_2)+z_3, \quad
+		z_1(z_2z_3) = (z_1z_2)z_3.</m>
+	    </li>
+	    <li>
+	      <em>Distributive law: </em>
+	      <m>z_1(z_2+z_3) = z_1z_2+z_1z_3.</m>
+	    </li>
+	    <li>
+	      <em>Commutative laws: </em>
+	      <m>z_1+z_2 = z_2+z_1, \quad z_1z_2 = z_2z_1.</m>
+	    </li>
+	  </ol>
+	  <!--FIXME there is a new paragraph in the output here where there should be none -->
+	  Similarly there are rules for the conjugation:
+	  <me>
+	    \overline{z_1+z_2} = \bar{z}_1+\bar{z}_2,\qquad
+	    \overline{z_1z_2} = \bar{z}_1\bar{z}_2,\qquad
+	    \overline{\left(\frac{1}{z}\right)} = \frac{1}{\bar{z}}.
+	  </me>
+	  It is easy to see that conjugation is a so called involution, that is, applying it twice gets us back to where we were:
+	  <me>
+	    \bar{\bar{z}} = z .
+	  </me>
+	  Finally, a formula which will become very useful is the following.
+	  Suppose that <m>z=x+iy</m>.  Then
+	  <me>
+	    z\bar{z} = (x+iy)(x-iy) = x^2+y^2 .
+	  </me>
+	  Notice that this is the expression that appeared in the denominator
+	  of the multiplicative inverse.  It is not hard to see why:
+	  <me>
+	    \frac{1}{z} = \frac{\bar{z}}{z\bar{z}} .
+	  </me>
+	</p>
+	<p>
+	  And while it seems that we have just made real numbers better,
+	  there is one thing that we did lose.  Real numbers are
+	  <em>ordered</em> in a nice way, that is, given two distinct real
+	  numbers <m>x</m> and <m>y</m>, then either <m>x\lt y</m> or <m>y\lt
+	    x</m>.  For complex numbers, there is no natural order.  That is,
+	  there is no way to order the numbers in a way that would play nice
+	  with the algebraic operations.  It is a general fact of math (and
+	  life) that when you find a new object that does something better,
+	  you will also lose something.  There is no such thing ass a free
+	  lunch.
+	</p>
+
+	<p>
+	  FIXME: do a few examples
+	</p>
+
+	<p>
+	  Note that it turns out that by adding <m>i</m> we have not only
+	  solved the equation <m>z^2=-1</m>.  We have ensured that all
+	  polynomial equations have solutions.  This is not easy to see, but it
+	  is true.  In fact, it is true that any polynomial of degree <m>d</m>
+	  must have exactly <m>d</m> roots, though some roots may be repeated.
+	  This is perhaps the main reason why complex analysis is such a powerful
+	  tool.
+	</p>
+      </section>
+
+      <section xml:id="cplxplanesec">
+        <title>The Complex Plane</title>
+
+	<subsection xml:id="cplxplanesubsec">
+	  <title>The Plane</title>
+
+	  <p>
+	    The real numbers are geometrically represented by an infinite
+	    number line, <em>the real line</em>, the complex numbers are a pair
+	    of real numbers, and as such can be represented by a two
+	    dimensional plane.  That is, if <m>z=x+iy</m>, then <m>z</m> can be
+	    represented by the point <m>(x,y)</m> on the plane.
+	    This plane is called the <idx>complex plane</idx><term>complex plane</term>
+	    <fn>The complex plane is sometimes called the
+	      <idx>Argand plane</idx><term>Argand plane</term>
+	      or the <idx>Gauss plane</idx><term>Gauss
+		plane</term>.</fn>.
+	    If we will want to
+	    emphasise the variable name we may say the <m>z</m>-plane.
+	    The horizontal axis (the <m>x</m>-axis) is called the
+	    <idx>real axis</idx><term>real axis</term> and the 
+	    vertical axis (the <m>y</m>-axis) is called the
+	    <idx>imaginary axis</idx><term>imaginary axis</term>.  Notice the location of the point
+	    <m>i</m>, that is the point <m>(0,1)</m> on the plane.
+	  </p>
+
+	  <p>
+	    FIXME: draw
+	  </p>
+
+	</subsection>
+
+	<subsection xml:id="modulussubsec">
+	  <title>Modulus</title>
+
+	  <p>
+	    Now think of a complex number <m>z=x+iy</m> as its position
+	    vector, that is, a vector from the origin to <m>z</m>.  We could
+	    measure the size of this vector and we call that size the
+	    <idx>modulus</idx><term>modulus</term>.  We write it as if it were the absolute value:
+	    <me>
+	      \abs{z} = \sqrt{x^2+y^2} .
+	    </me>
+	    If you recall last section we find that
+	    <m>\abs{z}=\sqrt{z\bar{z}}</m> or
+	    <m>\abs{z}^2=z\bar{z}</m> (in many computations dealing with a squared quantity is easier than dealing with a square root of a quantity).
+	    Another thing to notice is that if <m>y=0</m>, then
+	    <m>\abs{z} = \sqrt{x^2} = \abs{x}</m>, the standard absolute value
+	    on the real numbers.  So we have not confused matters by using
+	    the same notation for both.  In fact, sometimes the modulus is
+	    just called the <em>absolute value</em>.
+	  </p>
+
+	  <p>
+	    The modulus gives a distance between any two points, not just
+	    the origin and <m>z</m>.
+	    If <m>z=x+iy</m> and
+	    <m>w=a+ib</m>, then the <idx>distance</idx><term>distance</term> between them (using
+	    the standard euclidean distance in the plane) is
+	    <me>
+	      \abs{z-w} = \sqrt{{(x-a)}^2+{(y-b)}^2} .
+	    </me>
+	  </p>
+
+	  <p>
+	    The modulus satisfies a number of useful properties.  Let us list the
+	    properties that are easy to verify:
+	    <me>
+	      \abs{z} = \abs{\bar{z}} = \abs{-z} ,
+	    </me>
+	    <me>
+	      \abs{zw} = \abs{z}\abs{w} ,
+	    </me>
+	    and if <m>w \not= 0</m> then
+	    <me>
+	      \abs{\frac{1}{w}} = \frac{1}{\abs{w}} , \quad \text{and so} \quad
+	      \abs{\frac{z}{w}} = \frac{\abs{z}}{\abs{w}} .
+	    </me>
+	  </p>
+
+	  <p>
+	    Finally it satisfies the so-called <idx>triangle inequality</idx><term>triangle inequality</term>.
+	    <me>
+	      \abs{z+w} \leq \abs{z}+\abs{w}
+	    </me>
+	    This inequality can also be generalized to several
+	    variables:
+	    <me>
+	      \abs{z_1+z_2+\cdots+z_n} \leq
+	      \abs{z_1}+\abs{z_2}+\cdots+\abs{z_n} .
+	    </me>
+	    Another generalization is the <idx>inverse triangle inequality</idx><term>inverse triangle inequality</term>:
+	    <me>
+	      \bigl\lvert \abs{z}-\abs{w} \bigr\rvert \leq \abs{z-w} .
+	    </me>
+	  </p>
+
+	</subsection>
+
+	<subsection xml:id="argumentsubsec">
+	  <title>Argument</title>
+
+	  <p>
+	    A vector is described by two quantities, a direction and a
+	    magnitude.  We have the magnitude, that is the modulus.  In a two
+	    dimensional plane a direction can be described by an angle.  So let
+	    the <idx>argument</idx><term>argument</term> of <m>z</m> be the angle that the vector
+	    of <m>z</m> makes with the positive real axis.  We will use a
+	    positive number if the angle is in the counterclockwise direction.
+	    The modulus and the argument are simply the two numbers describing the
+	    point <m>z</m> using polar coordinates.
+	  </p>
+
+	  <p>
+	    FIXME: draw
+	  </p>
+
+	  <p>
+	    As we are really just looking at polar coordinates we notice that
+	    if <m>z=x+iy</m> is of modulus <m>r</m> and argument <m>\theta</m>,
+	    then
+	    <me>
+	      x = r \cos \theta, \qquad
+	      y = r \sin \theta.
+	    </me>
+	    Therefore we have the following formula for the argument
+	    <me>
+	      \cos \theta = \frac{x}{\abs{z}}, \qquad
+	      \sin \theta = \frac{y}{\abs{z}} .
+	    </me>
+	    Of course <m>\theta</m> is only defined up to a multiple of
+	    <m>2\pi</m> as are all angles in the plane.
+	    We write the argument as
+	    <m>
+	      \arg z = \theta .
+	    </m>
+	    Notice also that 0 has no reasonable
+	    argument, just as for polar coordinates we could not write an angle.
+	  </p>
+
+	  <p>
+	    FIXME: DRAW and examples
+	  </p>
+
+	  <p>
+	    Since the argument is not a unique number it is sometimes conventient
+	    to restrict it to a range in which it is unique.  Since adding <m>2\pi</m>
+	    changes nothing, it is always possible to give the argument <m>\theta</m>
+	    such that <m>-\pi \lt \theta \leq \pi</m>.  We call this number the
+	    <idx>principal value</idx><term>principal value</term> or
+	    <idx>principal branch</idx><term>principal branch</term> of the argument and to distinguish we usually
+	    write it as <m>\Arg z</m> rather than just <m>\arg z</m>.
+	  </p>
+	</subsection>
+      </section>
+
+      <section xml:id="cplxexpsec">
+        <title>The Complex Exponential</title>
+
+
+	<subsection xml:id="exponentialsubsec">
+	  <title>Exponential</title>
+
+	  <p>
+	    If <m>z</m> has modulus <m>r</m> and argument <m>\theta</m> then we can write
+	    <me>
+	      z= r (\cos \theta + i \sin \theta ) .
+	    </me>
+	    Let us give a name to the expression in the parenthesis.  Let us write
+	    <me>
+	      e^{i \theta} = \cos \theta + i \sin \theta .
+	    </me>
+	    This extends the definition of the exponential to the imaginary numbers.  To extend to all
+	    complex numbers, we recall the laws of exponents and we wish our new extension to also satisfy
+	    these laws.  It therefore makes sense to define for <m>z=x+iy</m>:
+	    <me>
+	      e^z = e^{x+iy} = e^x e^{iy} = e^x ( \cos y + i \sin y ) .
+	    </me>
+	  </p>
+
+	  <p>
+	    FIXME: examples
+	  </p>
+
+	  <p>
+	    The exponential satisfies many useful properties.  Let us list some
+	    that are easy to verify from the definition and from properties of
+	    the real exponential, the sine, and the cosine.
+	    <me>
+	      e^{z+w} = e^ze^w, \qquad
+	      e^{-w} = \frac{1}{e^w}, \qquad
+	      e^{z-w} = \frac{e^z}{e^w},
+	    </me>
+	    <me>
+	      \overline{e^{z}} = e^{\bar{z}} , \qquad
+	      \abs{e^{x+iy}} = e^x ,
+	    </me>
+	    and for any integer <m>k</m>:
+	    <me>
+	      e^{z} = e^{z+2\pi i} = 
+	      e^{z-2\pi i} = e^{z+4\pi i} = 
+	      e^{z+2k\pi i} .
+	    </me>
+	  </p>
+
+	  <p>
+	    The exponential function plays a central role in this subject and
+	    we will see it often.  Let us first notice that it gives a
+	    convenient way of writing a complex number using the polar
+	    coordinates:
+	    <me>
+	      z = re^{i\theta} .
+	    </me>
+	    And using the properties of the exponential we find that
+	    multiplication is more convenient in the polar coordinates.  Let
+	    <m>z = re^{i\theta}</m> and <m>w = se^{i\eta}</m>.  Then
+	    <me>
+	      zw = ( re^{i\theta} ) ( se^{i\eta} ) = (rs) e^{i(\theta+\eta)} .
+	    </me>
+	    So in polar coordinates when we multiply complex numbers we
+	    multiply the moduli and we add the arguments.
+	  </p>
+
+	  <p>
+	    This last property gives an interpretation of the complex number
+	    multiplication as dilation and rotation around the origin.  That
+	    is, multiplying by <m>re^{i\theta}</m> dilates by factor of
+	    <m>r</m> and rotates by angle <m>\theta</m>.  In particular, since
+	    <m>i = e^{i\pi/2}</m>, and <m>\pi/2 = 90^\circ</m>, we see that
+	    multiplying by <m>i</m> rotates around the origin by
+	    <m>90^\circ</m>.
+	  </p>
+
+	</subsection>
+
+	<subsection xml:id="rootsofunitysubsec">
+	  <title>Roots of Unity</title>
+
+	  <p>
+	    We have mentioned that complex numbers always provide exactly the
+	    right number of roots to polynomial equations.  Let us consider the
+	    equation
+	    <me>
+	      z^d = 1 .
+	    </me>
+	    Clearly <m>z=1</m> is a solution.  But we claim there are always
+	    exactly <m>d</m> distinct solutions.  First let us see what happens
+	    when we take a power.  Write <m>z = r e^{i \theta}</m>.  Then
+	    <me>
+	      z^d = r^d {(e^{i \theta})}^d = r^d e^{id\theta} .
+	    </me>
+	    So now suppose that
+	    <me>
+	      z^d = r^d e^{id\theta}  = 1 .
+	    </me>
+	    Two points in the plane are equal means their moduli (distance to origin)
+	    are equal, so <m>r^d = 1</m>, and there is only one nonnegative real number
+	    <m>r</m> solving this equation, and that is <m>r=1</m>.
+	  </p>
+
+	  <p>
+	    It is a little bit more difficult with the argument.  The argument is only
+	    determined up to adding a multiple of <m>2\pi</m>.  The argument of
+	    <m>1</m> is <m>0</m> or <m>2\pi</m> or any other multiple of <m>2\pi</m>.
+	    So <m>e^{id\theta}  = 1</m> if there exists some integer <m>k</m> such that
+	    <me>
+	      d\theta = 2k \pi, \qquad \text{or} \qquad
+	      \theta = \frac{k}{d} 2 \pi .
+	    </me>
+	    We notice that for <m>k=0,1,2,\ldots,d-1</m> we obtain different <m>\theta</m>
+	    between <m>0</m> and <m>2\pi</m>.  For any other <m>k</m> we could add and subtract
+	    a multiple of <m>2\pi</m> and get into the previous situation.  Hence the
+	    <m>\theta</m> are
+	    <me>
+	      0 , \frac{1}{d} 2 \pi ,
+	      \frac{2}{d} 2 \pi ,
+	      \ldots,
+	      \frac{d-1}{d} 2 \pi .
+	    </me>
+	    In other words, the <m>d</m> roots are
+	    <me>
+	      1, e^{i2\pi/d},
+	      e^{i4\pi/d},
+	      \ldots,
+	      e^{i2(d-1)\pi/d} .
+	    </me>
+	    These are called the <m>d</m>th <idx>roots of unity</idx><term>roots of unity</term>.
+	  </p>
+
+	  <p>
+	    For example, if <m>d=3</m>, the third roots of unity, that is
+	    the three solutions to <m>z^3=1</m> are
+	    <me>
+	      1, e^{i2\pi/3}, e^{i4\pi/3} .
+	    </me>
+	    If <m>d=4</m>, the fourth roots of unity, that is
+	    the four solutions to <m>z^4=1</m> are
+	    <me>
+	      1, e^{i\pi/2}, e^{i\pi}, e^{i3\pi/2}, \qquad \text{or} \qquad
+	      1, i, -1, -i .
+	    </me>
+	  </p>
+	</subsection>
+
+      </section>
+
+      <section xml:id="cplxsubsetsec">
+        <title>Subsets of the complex plane</title>
+
+	<p>
+	  Before we study functions on the complex plane, we need to have language to describe
+	  subsets in the complex plane, as functions are often not going to
+	  be defined on the entire plane.  Sets are often described the in
+	  the notation:
+	  <me>
+	    X = \{ z \in \C : \text{some condition on } z \} .
+	  </me>
+	  which translates to the set of all <m>z</m> that satisfies the
+	  condition given.  FIXME: We use the notation <m>X \subset \C</m>.
+	</p>
+
+	<p>
+	  FIXME: Some examples
+	  FIXME: <idx>complement</idx><term>complement</term>
+	</p>
+
+	<p>
+	  A very specific set that is often used is an <m>r</m>-<term>disc</term><idx>disc</idx><idx><m>r</m>-disc</idx>
+	  centered at <m>z_0</m>.
+	  Here <m>r</m> is a
+	  positive real number and <m>z_0</m> is a complex number.  The notation is
+	  <m>\Delta_r(z_0)</m>, fomally
+	  <me>
+	    \Delta_r(z_0) = \{ z \in \C : \abs{z-z_0} \lt r \} .
+	  </me>
+	  FIXME: draw
+	</p>
+
+	<p>
+	  FIXME: Similarly we have the <term>punctured disc</term><idx>punctured disc</idx>.
+	  The notation is
+	  <m>\Delta_r^*(z_0)</m>, fomally
+	  <me>
+	    \Delta_r^*(z_0) = \{ z \in \C : 0 \lt \abs{z-z_0} \lt r \} .
+	  </me>
+	  The difference is that 
+	  <m>\Delta_r^*(z_0)</m> does not include <m>z_0</m>.
+	  FIXME: draw
+	</p>
+
+	<p>
+	  FIXME: <term>open</term> <term>closed</term>
+	  <term>boundary point</term>
+	  <term>interior point</term>
+	  <term>bounded</term>
+	  <term>unbounded</term>
+	  <term>neighborhood</term>
+	</p>
+
+	<p>
+	  FIXME: examples
+	</p>
+
+	<p>
+	  FIXME: <term>path connected</term> (<term>connected</term>)
+	</p>
+
+	<p>
+	  FIXME: <idx>domain</idx><term>domain</term> is a nonempty open
+	  connected set.  Most of the time, we will be thinking about
+	  functions defined in a domain, and that is why we come up with a
+	  new word, so that we do not need to repeat nonempty open connected
+	  set.
+	  Sometimes a domain is also called a 
+	  <idx>region</idx><term>region</term> or
+	  <idx>open region</idx><term>open region</term>.
+	  A
+	  <idx>closed region</idx><term>closed region</term> is a domain together with its boundary.
+	  FIXME: examples
+	</p>
+
+      </section>
+
+    </chapter>
+
+    <chapter xml:id="cplxfunctionschap">
+      <title>Complex Functions</title>
+
+      <section xml:id="cplxfunctionssec">
+	<title>Complex Functions</title>
+
+	<p>
+	  FIXME: a rule that gives <m>w</m> given <m>z</m>.
+	  <me>w = f(z)</me>
+	  FIXME: DRAW
+	  FIXME: dependent, independent variables (terms)
+	</p>
+
+	<p>
+	  By <m>f(z)</m> we usually mean the value, so if we know <m>z</m>,
+	  then <m>f(z)</m> is a complex number.  The function we call just
+	  <m>f</m>.
+	</p>
+
+	<p>
+	  Functions are often only defined for some <m>z</m>, a set called
+	  <idx>domain of <m>f</m></idx><term>domain of <m>f</m></term>.  Given a <m>z</m> in the domain,
+	  we say <m>f(z)</m> is the <term>image</term> of <m>z</m>.
+	  The reason for using the same word for open connected set and the
+	  set where a function is defined is that generally in this class
+	  <q>a domain of a function is a domain.</q>
+	</p>
+
+	<p>
+	  FIXME: write down some examples.
+	</p>
+
+	<p>
+	  Graphing complex valued functions of complex variables is
+	  difficult.  For what we would normally think of as a graph, we
+	  would need 4 real dimensions; two dimensions for the independent
+	  variable and two for the dependent.
+	</p>
+
+	<p>
+	  FIXME: examples
+	</p>
+
+	<p>
+	  A complex valued function can be decomposed the real and imaginary
+	  parts.  If we decompose <m>z=x+iy</m>, we also decompose the image
+	  as
+	  <me>
+	    f(z) = u(x,y)+i v(x,y)
+	  </me>
+	  where <m>u</m> and <m>v</m> are regular run of the mill real valued
+	  functions of two real variables <m>x</m> and <m>y</m>.
+	</p>
+
+	<p>
+	  FIXME: Examples with domains/regions.  <idx>transformation</idx><term>transformation</term>.
+	  linear and squares, triangles,
+	  <m>z^2</m> and sectors.  <m>\bar{z}</m> and <m>\frac{1}{z}</m>
+	</p>
+
+	<p>
+	  FIXME: <idx>one-to-one</idx><term>one-to-one</term> vs. 
+	  <idx>many-to-one</idx><term>many-to-one</term>.  Examples, 1/z on punctured plane,
+	  <m>e^z</m>
+	  <m>\sin(z)</m>.  Or perhaps <m>\Re z</m> or <m>\Im z</m>
+	</p>
+
+	<p>
+	  Composition: <m>f \circ g (z) = f(g(z))</m>.  Examples:
+	</p>
+
+      </section>
+
+      <section xml:id="limitssec">
+	<title>Limits</title>
+
+	<p>
+	  If we have an expression or a function of a complex variable, we
+	  may wish to take a limit as a complex variable <m>z</m> goes to
+	  some fixed complex value <m>z_0</m>.  That is we may wish to compute
+	  the limit
+	  <me>
+	    \lim_{z \to z_0} f(z) .
+	  </me>
+	</p>
+
+	<p>
+	  The definition of a limit is the following:  Suppose
+	  the domain of <m>f(z)</m> is <m>D</m> and the point
+	  <m>z_0</m> is in <m>D</m> or on the boundary of <m>D</m>.
+	  A complex
+	  number <m>L</m> is a limit of <m>f(z)</m> as <m>z\to z_0</m> or
+	  <me>
+	    \lim_{z \to z_0} f(z)  = L ,
+	  </me>
+	  if for all <m>\epsilon &gt; 0</m> there exists a <m>\delta &gt;
+	    0</m> such that
+	  <me>
+	    f(z) \in \Delta_\epsilon\bigl(f(z_0)\bigr), \text{ for all } z \in
+	    \Delta_\delta^*(z_0) .
+	  </me>
+	  or in other words if
+	  <me>
+	    f\bigl(\Delta_\delta^*(z_0)\bigr) \subset \Delta_\epsilon\bigl(f(z_0)\bigr) .
+	  </me>
+
+	  FIXME: draw, note that approach is arbitrary
+	</p>
+
+	<p>
+	  The limit does not always exist, but if it does it is unique
+	  (theorem).
+	</p>
+
+	<p>
+	  Thm: Suppose <m>f(z) \to L</m> and <m>g(z)\to M</m> as
+	  <m>z \to z_0</m>.
+	  Then
+	  <ol>
+	    <li>
+	      <m>f(z)+g(z) \to L+M</m>
+	    </li>
+	    <li>
+	      <m>f(z)g(z) \to LM</m>
+	    </li>
+	    <li>
+	      If <m>M\not=0</m> then <m>f(z)/g(z) \to L/M</m>
+	    </li>
+	  </ol>
+	</p>
+
+	<p>
+	  Examples:
+	  <m>1,z,...</m> as <m>z \to z_0</m>.
+	  <m>(z^2+1)/(z-1)</m>, <m>z\to 1</m>.
+	  <m>1/z</m>, <m>z\to 0</m>, note that if <m>z = re^{i\theta}</m>
+	  then <m>1/z = (1/r)e^{-i\theta}</m>, so
+	  <me>
+	    |1/z - L| = |(1/r)e^{-i\theta}-L| \geq
+	    |(1/r)e^{-i\theta}| - |L|
+	    =
+	    1/r - |L|
+	  </me>
+	  so
+	  <me>
+	    |1/z - L| + |L| \geq 1/r \to \infty
+	  </me>
+	  So <m>|1/z - L|</m> not only doesn't go to zero, it becomes
+	  arbitrarily large.
+	</p>
+
+	<p>
+	  Thm: <m>f(z) \to L</m> if and only if
+	  <m>u \to \Re L</m> and
+	  <m>v \to \Im L</m>.
+	</p>
+
+	<p>
+	  Examples: <m>\frac{z}{\bar{z}} = \frac{z^2}{z\bar{z}} = 
+	    \frac{x^2-y^2}{x^2+y^2} + i\frac{2xy}{x^2+y^2}</m> limit does not
+	  exist for these.  Another way to see it, approach along real axis,
+	  then it is one as <m>\bar{z} = z</m>, then along imaginary axis
+	  where <m>\bar{z} = -z</m>
+	</p>
+
+
+	<p>
+	  A function <m>f</m> is <idx>continuous</idx><term>continuous</term> at <m>z_0</m> if
+	  <me>
+	    \lim_{z \to z_0} f(z)  = f(z_0) .
+	  </me>
+	  A function is simply <term>continuous</term>
+	  if it is continuous at all points.
+	</p>
+
+	<p>
+	  Theorem: If f and g are continuous so is f+g, fg, f/g (provided g
+	  not zero at <m>z_0</m>.
+	</p>
+
+	<p>
+	  Examples: <m>1, z, z^2, \bar{z}</m> any polynomial, <m>e^z</m>,
+	  <m>1/z</m> on <m>\C\setminus \{0\}</m>.
+	</p>
+
+	<p>
+	  Theorem: If f is continuous at z and g is continuous at f(z),
+	  then <m>g \circ f</m> is continuous at z.
+	</p>
+
+	<p>
+	  Examples: <m>e^{z^2}</m>, etc...
+	</p>
+
+	<p>
+	  Theorem: f is continuous if and only u and v are.
+	</p>
+
+      </section>
+
+      <section xml:id="cplxderivativessec">
+	<title>Complex Derivative</title>
+
+	<p>
+	  We say <m>f</m> has a <idx>complex derivative</idx><term>complex derivative</term> L at z if
+	  <me>
+	    L = \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	  </me>
+	  Remember that <m>\Delta</m> is a complex number and the limit we
+	  are taking is a complex limit.  We write <m>f'</m> or <m>\frac{df}{dz}</m>
+	  for the derivative.
+	</p>
+
+	<p>
+	  Looks similar to real
+	  one variable derivative, but looks can be deceiving.  In fact
+	  sometimes it is just called the <idx>derivative</idx><term>derivative</term>.
+	</p>
+
+	<p>
+	  Examples: <m>1, z, z^2</m>.  <m>\frac{(z+\Delta)^2 -z^2}{\Delta}
+	    = \frac{2z \Delta+\Delta^2}{\Delta} = 2z+\Delta</m>.
+	</p>
+
+	<p>
+	  On the other hand <m>\bar{z}</m> has no complex derivative
+	  anywhere:
+	  <me>\frac{\overline{z+\Delta} -\bar{z}}{\Delta} =
+	    \frac{\bar{\Delta}}{\Delta}
+	  </me>
+	  and we know this has no limit as <m>\Delta \to 0</m>.
+	</p>
+
+	<p>
+	  Thm: if f and g have a complex derivative, then
+	  <ol>
+	    <li>
+	      <m>(f+g)' = f'+g'</m>
+	    </li>
+	    <li>
+	      <m>(fg)' = f'g + fg'</m>
+	    </li>
+	    <li>
+	      <m>(f/g)' = (f'g - fg')/(g^2) ... g \not= 0</m>
+	    </li>
+	    <li>
+	      <m>(f(g(z))' = f'(g(z))g'(z) ( = f'g')</m>
+	    </li>
+	  </ol>
+	</p>
+
+	<p>
+	  Example: Since 1,<m>z</m>, have complex derivative all all points,
+	  then all  their algebraic combinations also have.  So all
+	  polynomials in <m>z</m> are complex differentiable, and their
+	  derivative works similarly: FIXME: example.
+	</p>
+
+	<p>
+	  Similarly rational functions <m>P(z)/Q(z)</m> are complex
+	  differentiable outside the points where <m>Q(z)=0</m>.
+	  FIXME: example.
+	</p>
+
+	<p>
+	  Definition <idx>analytic</idx><term>analytic</term>.  <m>f</m> analytic at a point if it is
+	  complex differentiable at a whole neighborhood.
+	</p>
+
+	<p>
+	  Example: <m>z^2</m> is analytic, but <m>z\bar{z}</m> is
+	  complex differentiable at 0 but nowhere else, so it is not
+	  analytic at zero.
+	</p>
+
+	<p>
+	  Example: polynomials and rational functions are complex
+	  differentiable at all points, they are analytic.
+	</p>
+
+	<p>
+	  <m>\Re z, \Im z</m> do not have complex derivative as
+	  <me>\Re z =  \frac{1}{2} (z+\bar{z}), \Im z =
+	    \frac{1}{2i}(z-\bar{z})</me>
+	  and while <m>z</m> has complex derivative everywhere <m>\bar{z}</m> does not.
+	  So polynomials in <m>x</m> and <m>y</m> are not necessarily
+	  analytic.
+	  In fact, every polynomial in
+	  <m>x</m> and <m>y</m> can be rewritten in terms of <m>z</m> and
+	  <m>\bar{z}</m>, and it will be analytic
+	  if after the smoke clears when we expand all parentheses, there
+	  will
+	  be no <m>\bar{z}</m> left.
+	  Example:
+	  <me>
+	    x^2-y^2+2ixy = 
+	    ((1/2) (z+\bar{z}))^2 - ... FIXME = z^2
+	  </me>
+	  No <m>\bar{z}</m>, so analytic.
+	  On the other hand
+	  <me>
+	    x^2+y^2 = 
+	    ((1/2) (z+\bar{z}))^2 - ... FIXME = z\bar{z}
+	  </me>
+	  so not analytic.
+	</p>
+
+
+      </section>
+
+      <section xml:id="cauchyriemannsec">
+	<title>Cauchy-Riemann Equations</title>
+
+	<p>
+	  Let <m>u_x, u_y, ...</m> be the real partial derivatives.
+	  And suppose the derivative exists.
+	  <me>
+	    \Re f'(z) =  \Re \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	    =
+	    \lim_{\delta \to 0} \frac{u(x+\delta,y)-u(x,y)}{\delta}
+	    =
+	    \lim_{\delta \to 0} \frac{v(x,y+\delta)-v(x,y)}{\delta}
+	    =
+	    u_x = v_y
+	  </me>
+	  Similarly
+	  <me>
+	    \Im f'(z) =  \Im \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	    =
+	    \lim_{\delta \to 0} \frac{v(x+\delta,y)-v(x,y)}{\delta}
+	    =
+	    \lim_{\delta \to 0} -\frac{u(x,y+\delta)-u(x,y)}{\delta}
+	    =
+	    v_x = -u_y
+	  </me>
+	  So
+	  <me>
+	    f'(z) = u_x + iv_x \text{ and }
+	    f'(z) = v_y - iu_y
+	  </me>
+	</p>
+
+	<p>
+	  So, that means, if f complex differentiable, then
+	  <me>
+	    u_x = v_y, \qquad
+	    v_x = -u_y
+	  </me>
+	  <idx>Cauchy-Riemann equations</idx>
+	  <idx>CR equations</idx>
+	  <term>Cauchy-Riemann</term> (CR) equations.
+	</p>
+
+	<p>
+	  Theorem: f is complex differentiable at a point
+	  if and only if the Cauchy-Riemann equations  hold at that point.
+	</p>
+
+	<p>
+	  Theorem: f is analytic
+	  if and only if the Cauchy-Riemann equations hold
+	</p>
+
+	<p>
+	  It is generally much easier to check that a function is analytic if
+	  we check the CR equations then computing the limit.
+	</p>
+
+	<p>
+	  Example: check for <m>z</m> and <m>\bar{z}</m>, and for <m>e^z
+	  = e^x\cos y +ie^x \sin y</m>
+	</p>
+
+	<p>
+	  Example: Expand around a point <m>f(0)+az + b\bar{z} + ...</m>.  So
+	  CR imply no <m>\bar{z}</m>
+	</p>
+
+      </section>
+
+      <section xml:id="elemfuncs">
+	<title>Elem funcs</title>
+
+	<p>
+	  Linear <m>w = az+b</m>
+	</p>
+
+	<p>
+	  <m>\frac{1}{z}</m> and infinity.  Draw picture.  Reflection accross
+	  the circle and conjugate.  Behaviour of function <m>f(z)</m>
+	  at infinity same as behaviour of <m>f(1/z)</m> at zero.
+	  Riemann sphere again!
+	</p>
+
+	<p>
+	  Linear fractional <m>\frac{a+bz}{c+dz}</m> for <m>ad\not= cb</m>.
+	  is invertible except at the point where <m>c+dz=0</m> which goes to
+	  infinity.  Maps of riemann sphere to riemann sphere.
+	  Polynomial is an example that fixes infinity.  Compute derivative.
+	  Examples.
+	</p>
+
+	<p>
+	  Exponential <m>e^z</m>.  Properties
+	  <me>
+	    e^z \not= 0, e^0=1, \frac{d}{dz} e^z = e^z, e^{z+w} = e^ze^w,
+	    \overline{e^z} = e^{\bar{z}}, e^z=e^{z+2\pi ki}, \abs{e^z} = e^{\Re
+	    z}, \arg e^z = \Im z
+	  </me>
+	  Let's show the derivative.
+	  We know it's complex differentiabble we might as well just
+	  differentiate in <m>x</m>.  So
+	  <me>
+	    \frac{d}{dz} e^z
+	    =
+	    \frac{d}{dx} e^x (\cos y + i \sin y)
+	    =
+	    e^x (\cos y + i \sin y)
+	    =
+	    e^z
+	  </me>
+	</p>
+
+	<p>
+	  Infinitely many to one.  Always infinitely many roots of <m>e^z =
+	    w</m>.  Unlike the real exponential.  Example <m>e^z = 1</m> has
+	  solution <m>z=0</m>, but also <m>z=2\pi ki</m> for any integer
+	  <m>k</m>.
+	</p>
+
+	<p>
+	  Logarithm is the <q>inverse</q> of the exponential.  Of course as
+	  the exponential is infinitely many to one, the logarithm is not a
+	  well defined function.  It is an infinitely many valued function.
+	  That is we wish to say that if <m>e^z = w</m>, then
+	  <me>
+	    \log w = z
+	  </me>
+	  but we also get that
+	  <me>
+	    \log w = z + 2\pi k i
+	  </me>
+	  for any integer <m>k</m>. other properties that follow is that
+	  <m>\log 0</m> is undefined.  and the corresponding properties from
+	  the exponential
+	  <me>
+	    \log 1 = 2 \pi i k, \log z + \log w = \log zw,
+	    \log z = \log z + 2\pi ki
+	  </me>
+	  Since
+	  <me>
+	    z = e^{\log z}, \qquad \text{then} \qquad
+	    1 = \frac{d}{dz}  e^{\log z} =
+	    \left( \frac{d}{dz} \log z \right) e^{\log z}
+	    \left( \frac{d}{dz} \log z \right) z
+	  </me>
+	  so
+	  <me>
+	    \frac{d}{dz} \log z = \frac{1}{z}
+	  </me>
+	  as expected.
+	</p>
+
+	<p>
+	  No matter, how do we compute it?
+	  We have
+	  <me>
+	    e^z = w = \abs{w}e^{i\arg w}
+	  </me>
+	  Taking logs we get
+	  <me>
+	    \log w = \log \abs{w}e^{i\arg w}
+	    = (\log \abs{w}) + \log e^{i\arg w}
+	    = (\log \abs{w}) + i\arg w
+	  </me>
+	  So the multivaluedness of <m>\log</m> is just like the
+	  multivaluedness of the argument.
+	</p>
+
+	<p>
+	  Just as we have the principal branch of arg, called Arg, that is
+	  valued in <m>-\pi \lt \Arg z \leq \pi</m> we have the principal
+	  branch  of the log, called Log defined by
+	  <me>
+	    \Log z = \log \abs{z} + i \Arg z
+	  </me>
+	  This is usually what the computers will compute if you plug a
+	  complex number into log.  It is a single valued function, but it is
+	  not continuous along the negative reals.  DRAW, explain.
+	  Now a different branch could have been picked for the argument,
+	  such as taking the argument in the range <m>[0,2\pi)</m> which
+	  would be another fine choice and then the logarithm you get is not
+	  continuous on the positive reals.  Any choice you make will be
+	  discontonious somewhere if you want a function.  We will see that
+	  this is not a defect, this is really what makes complex analysis so
+	  useful.  One says that log is an analytic multivalued function
+	  defined on the punctured plane.  But if we want an actual analytic
+	  function, we must make a <q>cut</q>...
+	</p>
+
+	<p>
+	  Finally let's define trig functions.  We have that
+	  <me>
+	    e^{it} = \cos t + i \sin t
+	    \qquad
+	    e^{-it} = \cos t - i \sin t
+	  </me>
+	  We could say: let this also hold for complex <m>t</m>.  And then we
+	  have
+	  <me>
+	    \cos z = \frac{e^{iz} + e^{-iz}}{2}
+	    \qquad
+	    \sin z = \frac{e^{iz} - e^{-iz}}{2i}
+	  </me>
+	  And these are the definitions of comlex sine and cosine.  When
+	  <m>z</m> is real, these are the standard sin and cosine for real
+	  numbers.
+	  <me>
+	    \cos (-z) = \cos z, \sin(-z) = - \sin z, 
+	  </me>
+	  <me>
+	    0 = \cos z, \qquad \text{for} z = k \pi
+	  </me>
+	  <me>
+	    0 = \sin z, \qquad \text{for} z = k \pi + \pi/2
+	  </me>
+	  <me>
+	    (\cos z)^2 + (\sin z)^2 = 1
+	  </me>
+	  Actually all the standard identities hold.  The moment we have an
+	  identity for all real numbers it turns out it holds for all complex
+	  numbers too.
+	</p>
+
+	<p>
+	  FIXME:Check differentiation rules for sine and cosine
+	</p>
+
+	<p>
+	  Similarly we define so called hyperbolic trig functions
+	  <me>
+	    \cosh z = \frac{e^{z} + e^{-z}}{2}
+	    \qquad
+	    \sinh z = \frac{e^{z} - e^{-z}}{2}
+	  </me>
+	  FIXME: Check differentiation rules for these.
+	</p>
+
+      </section>
+
+    </chapter>
+
+    <chapter xml:id="harmfuncschap">
+      <title>Harmonic functions</title>
+
+      <section xml:id="harmfuncssec">
+        <title>Harmonic functions</title>
+
+	<p>
+	  A function <m>u</m> in the plane is harmonic if it satisfies
+	  <m>\Delta u = u_{xx}+u_{yy} = 0</m>.  Harmonic functions come up
+	  in many energy minimizing steady state problems, for example in
+	  solving for the stady state heat distribution in a medium.
+	</p>
+
+	<p>
+	  Examples <m>x, x^2-y^2, xy, ...</m>
+	</p>
+
+	<p>
+	  FIXME: Visualize harmonic functions.
+	</p>
+
+	<p>
+	  Maximum principle: If <m>u</m> is harmonic on a domain (connected
+	  open set) <m>D</m> and achieves a maximum in <m>D</m>, then
+	  <m>u</m> is constant.
+	  That is, harmonic functions are all saddle surfaces at best.
+	</p>
+
+	<p>
+	  Thm: real and imaginary parts of an analytic function are
+	  harmonic.
+	  FIXME: differentiate CR equations to obtain harmonic equations for
+	  both <m>u</m> and <m>v</m>.
+	  <me>
+	    u_x = v_y, 
+	    u_y = - v_x
+	  </me>
+	  <me>
+	    u_{xx} = v_{xy}, 
+	    u_{yy} = - v_{xy}
+	  </me>
+	  So
+	  <me>
+	    u_{xx} + u_{yy} = v_{xy} - v_{xy} = 0
+	  </me>
+	  Similarly
+	  <me>
+	    v_{xx} + v_{yy} = 0
+	  </me>
+	</p>
+
+	<p>
+	  FIXME: Define <idx>harmonic conjuage</idx><term>harmonic conjugate</term> of <m>u</m>.
+	</p>
+
+	<p>
+	  Example: <m>u = x^2-y^2</m> is harmonic.
+	  Then as <m>u_x = v_y</m>, then
+	  <me>
+	    2x = v_y
+	  </me>
+	  so perhaps <m>v = 2xy</m> would work?  It satisfies
+	  <m>u_x = v_y</m> of course, and we can also check that it satisfies
+	  <m>u_y = -v_x</m>.
+	</p>
+
+	<p>
+	  Example: <m>\log |z|</m> is harmonic, but no harmonic conjugate
+	  exists in <m>\C \setminus \{ 0 \}</m>.  For example
+	  <me>
+	    \Log z = \log |z| + i \Arg z
+	  </me>
+	  but <m>\Arg z</m> is not defined in the entire punctured plane.
+	  FIXME: DRAW.
+	</p>
+
+	<p>
+	  Thm: Suppose <m>R = \{ (x,y) | a \lt x \lt b, c \lt y \lt d
+	    \}</m> and <m>u</m> is harmonic in <m>R</m>.
+	  Then there exists a harmonic conjugate <m>v</m>
+	  defined on <m>R</m>.
+	</p>
+
+	<p>
+	  Let's just compute it:
+	  Suppose <m>(x_0,y_0)</m> is a point in <m>R</m>
+	  then as <m>u_x = v_y</m>,
+	  <me>
+	    v(x,y) = \int_{y_0}^y u_x(x,t)\, dt + C(x)
+	  </me>
+	  Now as <m>v_x = -u_y</m> we have that
+	  <me>
+	    -u_y(x,y) = 
+	    v_x(x,y) =
+	    \int_{y_0}^y u_{xx}(x,t)\, dt + C'(x)
+	    =
+	    \int_{y_0}^y - u_{yy}(x,t)\, dt + C'(x)
+	    =
+	    -u_y(x,y)+u_y(x,y_0)
+	  </me>
+	  so <m>u_y(x,y_0) = -C'(x)</m> and so
+	  <me>
+	    C(x) = \int_{x_0}^x -u_y(s,y_0) \, ds + D
+	  </me>
+	  So
+	  <me>
+	    v(x,y) = \int_{y_0}^y u_x(x,t)\, dt +
+	    \int_{x_0}^x -u_y(s,y_0) \, ds + D
+	  </me>
+	  We have not only figured out how to construct the complex conjugate
+	  we have also figured out that any two complex conjugates differ by
+	  a constat (<m>D</m>).
+	</p>
+      </section>
+
+    </chapter>
+
+    <backmatter>
+
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+
+    </backmatter>
+
+  </book>
+</mathbook>
