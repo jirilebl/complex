@@ -228,8 +228,9 @@
 	<p>
 	  The terminology real, complex, and imaginary is perhaps misleading.
 	  There is nothing more imaginary about <m>i</m> then there is
-	  about negative real numbers.  They simply appear in different
-	  applications.
+	  about rational numbers, roots, zero, or negative real numbers.
+	  They simply appear in different applications.  They may look a
+	  little strange, a little abstract, but so did zero to the ancient greeks.
 	</p>
 
 	<p>
@@ -254,6 +255,23 @@
 	    {(x+iy)}^{-1} = \frac{1}{x+iy} =
 	    \frac{x-iy}{x^2+y^2} =
 	    \frac{x}{x^2+y^2} - i \frac{y}{x^2+y^2}.
+	  </me>
+	  For example,
+	  <me>
+	    {(2+i3)}^{-1} = \frac{1}{2+i3} =
+	    \frac{2-i3}{2^2+3^2} =
+	    \frac{2}{13} - i \frac{3}{13}.
+	  </me>
+	  Let's test it out, using the formula for multiplication
+	  <me>
+	    (2+3i) {(2+i3)}^{-1} = 
+	    (2+3i) \left( \frac{2}{13} - i \frac{3}{13} \right)
+	    =
+	    \left( 2 \frac{2}{13} - 3 \frac{-3}{13} \right)
+	    +i
+	    \left( 2 \frac{3}{13} - 3 \frac{2}{13} \right)
+	    =
+	    1 + 0i = 1.
 	  </me>
 	</p>
 	<p>
@@ -1144,7 +1162,7 @@
 	<p>
 	  A function of the form
 	  <m>f(z) = \frac{a+bz}{c+dz}</m> for <m>ad\not= cb</m>,
-	  is called <idx>linear fractional</idx><term>linear fractional</idx>.
+	  is called <idx>linear fractional</idx><term>linear fractional</term>.
 	  For example,
 	  <me>
 	    f(z) = \frac{2i+8z}{1+(1+i)z} .
