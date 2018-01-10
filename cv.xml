@@ -144,23 +144,23 @@
 	</blockquote>
 
 	<p>
-	  One of the basic problem in mathematics is solving equations.
-	  Equation such as <m>x+2=3</m> we could solve in antiquity,
-	  <m>x=1</m>, we could do with just integers.  A little harder one is
+	  One of the most basic problems in mathematics is solving equations.
+	  Equation such as <m>x+2=3</m>, we could solve in antiquity;
+	  <m>x=1</m>.  And we could do it just with integers.  A little harder one is
 	  <m>2x = 3</m>, now we need fractions (rational numbers) to find the
 	  solution of <m>x=\frac{3}{2}</m>, again we could do this since
-	  antiquity.  Notice that it is in some sense cheating, we simply said
+	  antiquity.  In some sense cheating, we simply said
 	  <q>there has to be a number we get when we divide 3 by
 	    2, and so we will call it <m>\frac{3}{2}</m>.</q>  The equation
-	  <m>x^2=2</m> presents another conundrum, since on one hand as it is 
-	  the length of the diagonal of a square tile of side one, we are
-	  convinced that such a number exists, and yet it was known to ancient
-	  greeks already that there is no fraction that will work.
-	  But again we solve it by cheating a little.  We call this number
+	  <m>x^2=2</m> presents another conundrum.  On one hand <m>x</m> is 
+	  the length of the diagonal of a square tile of side one, so we are
+	  convinced that such a number exists.  And yet it was already known to ancient
+	  greeks that there is no fraction that will work.
+	  Again we solve it by cheating a little.  We call this number
 	  <em>the square root of 2</em> which just means <q>the number which
 	  when we square we get 2</q>.
 	  OK, we got out of those difficulties relatively easy.
-	  The equation <m>x+1=1</m> turnes out to be a bit harder
+	  The equation <m>x+1=1</m> turned out to be a bit harder
 	  than you would have thought from the modern perspective,
 	  as it took people quite some time to
 	  treat zero as a number.  Next, an equation such as
@@ -180,7 +180,7 @@
 	</p>
 
 	<p>
-	  The real numbers are a wonderful set of numbers and we so wish
+	  The reals are a wonderful set of numbers and we so wish
 	  that we could work with them, but then
 	  we try to solve the equation <m>x^2=-1</m>, and we are in
 	  trouble again.  There is no real number whose square is <m>-1</m>
@@ -188,18 +188,22 @@
 	  have gotten out of this trouble before, we will just <q>invent</q>
 	  a new number.  Let us call it <m>i</m>, although some people,
 	  especially engineers, will call it <m>j</m>, and some people will
-	  even just always write <m>\sqrt{-1}</m> instead of <m>i</m>, but we
-	  are lazy.
+	  even just always write <m>\sqrt{-1}</m> instead of <m>i</m>.
+	  We will write <m>i</m>.
 	</p>
 
 	<p>
-	  We simply start with the real numbers and we throw in 
+	  So, we simply start with the real numbers and we throw in 
 	  <m>i</m> as if it were an unknown and we call the result the
 	  <idx>complex numbers</idx>
 	  <term>complex numbers</term>.  Then, whenever we can simplify
 	  with <m>i^2=-1</m>, we do so.  For example:
 	  <me>
-	    {(1+3i)}^2 = 1 + 6i +9i^2 = 1 + 6i - 9 = -8 + 6i .
+	    {(1+3i)}^2 = 1 + 6i +9i^2 = 1 + 6i - 9 = -8 + 6i ,
+	  </me>
+	  or
+	  <me>
+	    (1+3i)(2-5i) - 9i = 2 + 6i -5 i - 15 i^2 - 9i = 2+i + 15 - 9i = 17-8i .
 	  </me>
 	  A little bit of thought reveals that if we think of the operations of
 	  multiplications and addition, we can write all of the <em>complex
@@ -236,7 +240,9 @@
 	  <me>
 	    (x+iy)(a+ib) = (xa-yb) + i(xb+ya) .
 	  </me>
-	  We can also work out the additive and multiplicative inverses.
+	  We can also work out the <idx>additive
+	    inverse</idx><idx>multiplicative inverse</idx>
+	  additive and multiplicative inverses.
 	  The additive, that is <m>-z</m> is really easy:
 	  Notice <m>(x+iy)+(-x-iy) = 0</m>, so <m>-(x+iy) = -x-iy</m>.
 	  The multiplicative is somewhat more difficult.
@@ -261,11 +267,13 @@
 	  <me>
 	    \bar{z} = \overline{x+iy} = x-iy .
 	  </me>
+	  So for example <m>\overline{9-3i} = 9+3i</m> or <m>\overline{5i} = -5i</m>.
 	  That is, you simply flip the sign of the imaginary part.
 	</p>
 
 	<p>
-	  Complex numbers are a <em>field</em> just like the real numbers.
+	  Complex numbers are a <idx>field</idx><idx>field of complex
+	    numbers</idx><em>field</em> just like the real numbers.
 	  As the real numbers are just part of the complex numbers we still
 	  have 0 and 1.  We have additive and multiplicative inverses (see
 	  above).
@@ -325,7 +333,7 @@
 	</p>
 
 	<p>
-	  Note that it turns out that by adding <m>i</m> we have not only
+	  It turns out that by adding <m>i</m> we have not only
 	  solved the equation <m>z^2=-1</m>.  We have ensured that all
 	  polynomial equations have solutions.  This is not easy to see, but it
 	  is true.  In fact, it is true that any polynomial of degree <m>d</m>
@@ -343,7 +351,7 @@
 
 	  <p>
 	    The real numbers are geometrically represented by an infinite
-	    number line, <em>the real line</em>, the complex numbers are a pair
+	    number line, <idx>real line</idx><em>the real line</em>, the complex numbers are a pair
 	    of real numbers, and as such can be represented by a two
 	    dimensional plane.  That is, if <m>z=x+iy</m>, then <m>z</m> can be
 	    represented by the point <m>(x,y)</m> on the plane.
@@ -371,21 +379,22 @@
 	  <title>Modulus</title>
 
 	  <p>
-	    Now think of a complex number <m>z=x+iy</m> as its position
-	    vector, that is, a vector from the origin to <m>z</m>.  We could
-	    measure the size of this vector and we call that size the
+	    Think of a complex number <m>z=x+iy</m> as its position
+	    vector, that is, a vector from the origin to <m>z</m>.  If
+	    we measure the euclidean length of this vector and we call that length the
 	    <idx>modulus</idx><term>modulus</term>.  We write it as if it were the absolute value:
 	    <me>
 	      \abs{z} = \sqrt{x^2+y^2} .
 	    </me>
-	    If you recall last section we find that
+	    For example <m>\abs{2-3i} = \sqrt{2^2+{(-3)}^2} = \sqrt{13}</m>.
+	    If you recall the last section, we find that
 	    <m>\abs{z}=\sqrt{z\bar{z}}</m> or
 	    <m>\abs{z}^2=z\bar{z}</m> (in many computations dealing with a squared quantity is easier than dealing with a square root of a quantity).
 	    Another thing to notice is that if <m>y=0</m>, then
-	    <m>\abs{z} = \sqrt{x^2} = \abs{x}</m>, the standard absolute value
+	    <m>\abs{z} = \abs{x+0i} = \sqrt{x^2} = \abs{x}</m>, the standard absolute value
 	    on the real numbers.  So we have not confused matters by using
 	    the same notation for both.  In fact, sometimes the modulus is
-	    just called the <em>absolute value</em>.
+	    just called the <idx>absolute value</idx><em>absolute value</em>.
 	  </p>
 
 	  <p>
@@ -1101,10 +1110,28 @@
       </section>
 
       <section xml:id="elemfuncs">
-	<title>Elem funcs</title>
+	<title>Elementary functions</title>
 
 	<p>
-	  Linear <m>w = az+b</m>
+	  The first type of elementary functions we discuss are the 
+	  so called <idx>affine function</idx><term>affine functions</term>.
+	  That if <m>f(z) = az+b</m> for some complex numbers <m>a</m> and
+	  <m>b</m>.  When <m>b=0</m>, then <m>f</m> is said to be
+	  <idx>linear function</idx><term>linear</term><fn>Often,
+	    expecially in calculus, affine functions are also
+	    called linear.</fn>.  For example, 
+	  <me>
+	    f(z) = 3iz-\sqrt{2} + 9i
+	  </me>
+	  is an affine function, and
+	  <me>
+	    f(z) = (1+i)z
+	  </me>
+	  is a linear funtion.
+	</p>
+
+	<p>
+	  FIXME: invertible
 	</p>
 
 	<p>
@@ -1115,7 +1142,20 @@
 	</p>
 
 	<p>
-	  Linear fractional <m>\frac{a+bz}{c+dz}</m> for <m>ad\not= cb</m>.
+	  A function of the form
+	  <m>f(z) = \frac{a+bz}{c+dz}</m> for <m>ad\not= cb</m>,
+	  is called <idx>linear fractional</idx><term>linear fractional</idx>.
+	  For example,
+	  <me>
+	    f(z) = \frac{2i+8z}{1+(1+i)z} .
+	  </me>
+	  An affine function is a special kind of a linear fractional function:
+	  we take <m>c=1</m> and <m>d=0</m>.
+	</p>
+
+	<p>
+	  FIXME:
+	  A linear fractional function is
 	  is invertible except at the point where <m>c+dz=0</m> which goes to
 	  infinity.  Maps of riemann sphere to riemann sphere.
 	  Polynomial is an example that fixes infinity.  Compute derivative.
@@ -1130,7 +1170,7 @@
 	    z}, \arg e^z = \Im z
 	  </me>
 	  Let's show the derivative.
-	  We know it's complex differentiabble we might as well just
+	  We know it's complex differentiable we might as well just
 	  differentiate in <m>x</m>.  So
 	  <me>
 	    \frac{d}{dz} e^z
