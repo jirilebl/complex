@@ -264,14 +264,18 @@
 	  </me>
 	  Let's test it out, using the formula for multiplication
 	  <me>
-	    (2+3i) {(2+i3)}^{-1} = 
+	    \begin{split}
+	    (2+3i) {(2+i3)}^{-1} &amp; = 
 	    (2+3i) \left( \frac{2}{13} - i \frac{3}{13} \right)
+	    \\
+	    &amp;
 	    =
 	    \left( 2 \frac{2}{13} - 3 \frac{-3}{13} \right)
 	    +i
 	    \left( 2 \frac{3}{13} - 3 \frac{2}{13} \right)
 	    =
 	    1 + 0i = 1.
+	    \end{split}
 	  </me>
 	</p>
 	<p>
@@ -697,7 +701,7 @@
       </section>
 
       <section xml:id="cplxsubsetsec">
-        <title>Subsets of the complex plane</title>
+        <title>Subsets of the Complex Plane</title>
 
 	<p>
 	  Before we study functions on the complex plane, we need to have language to describe
@@ -709,6 +713,7 @@
 	  </me>
 	  which translates to the set of all <m>z</m> that satisfies the
 	  condition given.  FIXME: We use the notation <m>X \subset \C</m>.
+	  FIXME: also the notation <m>z \in X</m>.
 	</p>
 
 	<p>
@@ -843,7 +848,11 @@
 	</p>
 
 	<p>
-	  Composition: <m>f \circ g (z) = f(g(z))</m>.  Examples:
+	  Another useful way to put functions together is
+	  <idx>composition</idx><term>composition</term>.
+	  If we have two complex functions <m>f</m> and <m>g</m>, then their
+	  composition is <m>f \circ g (z) = f\bigl(g(z)\bigr)</m>.  Examples:
+	  FIXME
 	</p>
 
       </section>
@@ -889,22 +898,25 @@
 	  (theorem).
 	</p>
 
-	<p>
-	  Thm: Suppose <m>f(z) \to L</m> and <m>g(z)\to M</m> as
-	  <m>z \to z_0</m>.
-	  Then
-	  <ol>
-	    <li>
-	      <m>f(z)+g(z) \to L+M</m>
-	    </li>
-	    <li>
-	      <m>f(z)g(z) \to LM</m>
-	    </li>
-	    <li>
-	      If <m>M\not=0</m> then <m>f(z)/g(z) \to L/M</m>
-	    </li>
-	  </ol>
-	</p>
+	<theorem>
+	  <p>
+	    Suppose <m>f(z) \to L</m> and <m>g(z)\to M</m> as
+	    <m>z \to z_0</m>.
+	    Then as
+	    <m>z \to z_0</m>.
+	    <ol>
+	      <li>
+		<m>f(z)+g(z) \to L+M</m>
+	      </li>
+	      <li>
+		<m>f(z)g(z) \to LM</m>
+	      </li>
+	      <li>
+		If <m>M\not=0</m>, then <m>\frac{f(z)}{g(z)} \to \frac{L}{M}.</m>
+	      </li>
+	    </ol>
+	  </p>
+	</theorem>
 
 	<p>
 	  Examples:
@@ -950,28 +962,34 @@
 	  if it is continuous at all points.
 	</p>
 
-	<p>
-	  Theorem: If f and g are continuous so is f+g, fg, f/g (provided g
-	  not zero at <m>z_0</m>.
-	</p>
+	<theorem>
+	  <p>
+	    If <m>f</m> and <m>g</m> are continuous so is <m>f+g</m>, <m>fg</m>,
+	    <m>\frac{f}{g}</m> (provided <m>g</m> is not zero).
+	  </p>
+	</theorem>
 
 	<p>
 	  Examples: <m>1, z, z^2, \bar{z}</m> any polynomial, <m>e^z</m>,
 	  <m>1/z</m> on <m>\C\setminus \{0\}</m>.
 	</p>
 
-	<p>
-	  Theorem: If f is continuous at z and g is continuous at f(z),
-	  then <m>g \circ f</m> is continuous at z.
-	</p>
+	<theorem>
+	  <p>
+	    If <m>f</m> is continuous at <m>z_0</m> and <m>g</m> is continuous at <m>f(z_0)</m>,
+	    then the composition <m>g \circ f</m> is continuous at <m>z_0</m>.
+	  </p>
+	</theorem>
 
 	<p>
 	  Examples: <m>e^{z^2}</m>, etc...
 	</p>
 
-	<p>
-	  Theorem: f is continuous if and only u and v are.
-	</p>
+	<theorem>
+	  <p>
+	    <m>f = u+iv</m> is continuous if and only <m>u</m> and <m>v</m> are continuous.
+	  </p>
+	</theorem>
 
       </section>
 
@@ -1028,7 +1046,7 @@
 
 	<p>
 	  Example: Since 1,<m>z</m>, have complex derivative all all points,
-	  then all  their algebraic combinations also have.  So all
+	  then so do all their algebraic combinations.  So all
 	  polynomials in <m>z</m> are complex differentiable, and their
 	  derivative works similarly: FIXME: example.
 	</p>
@@ -1040,14 +1058,17 @@
 	</p>
 
 	<p>
-	  Definition <idx>analytic</idx><term>analytic</term>.  <m>f</m> analytic at a point if it is
-	  complex differentiable at a whole neighborhood.
+	  A complex function <m>f</m> defined on a domain <m>U</m> (open
+	  connected set)
+	  is said to be <idx>analytic</idx><term>analytic</term>
+	  if <m>f</m> is complex differentiable at
+	  all points of <m>U</m>.
 	</p>
 
 	<p>
 	  Example: <m>z^2</m> is analytic, but <m>z\bar{z}</m> is
 	  complex differentiable at 0 but nowhere else, so it is not
-	  analytic at zero.
+	  analytic on any open set.
 	</p>
 
 	<p>
@@ -1061,26 +1082,54 @@
 	    \frac{1}{2i}(z-\bar{z})</me>
 	  and while <m>z</m> has complex derivative everywhere <m>\bar{z}</m> does not.
 	  So polynomials in <m>x</m> and <m>y</m> are not necessarily
-	  analytic.
-	  In fact, every polynomial in
-	  <m>x</m> and <m>y</m> can be rewritten in terms of <m>z</m> and
-	  <m>\bar{z}</m>, and it will be analytic
-	  if after the smoke clears when we expand all parentheses, there
-	  will
-	  be no <m>\bar{z}</m> left.
-	  Example:
-	  <me>
-	    x^2-y^2+2ixy = 
-	    ((1/2) (z+\bar{z}))^2 - ... FIXME = z^2
-	  </me>
-	  No <m>\bar{z}</m>, so analytic.
-	  On the other hand
-	  <me>
-	    x^2+y^2 = 
-	    ((1/2) (z+\bar{z}))^2 - ... FIXME = z\bar{z}
-	  </me>
-	  so not analytic.
+	  analytic.  In fact we have the following lemma:
 	</p>
+
+	<lemma>
+	  <p>
+	    Every polynomial
+	    <m>P(x,y) = c_{00} + c_{10} x + c_{01} y + c_{20} x^2 +
+	      c_{11} xy + \cdots</m>
+	    in
+	    <m>x</m> and <m>y</m> can be rewritten in terms of <m>z</m> and
+	    <m>\bar{z}</m>.  If all the parenthesis are expanded <m>P</m>
+	    contains no <m>\bar{z}</m>, then <m>P</m> is analytic.
+	    If there are <m>\bar{z}</m>'s left, then <m>P</m> is not analytic.
+	  </p>
+	</lemma>
+
+	<example>
+	  <p>
+	    Let's start with
+	    <me>
+	      \begin{split}
+	      x^2-y^2+2ixy  &amp; = 
+	      {\left( \frac{z+\bar{z}}{2} \right)}^2 -
+	      {\left( \frac{z-\bar{z}}{2i} \right)}^2 +
+	      2i {\left( \frac{z+\bar{z}}{2} \right)}
+	      {\left( \frac{z-\bar{z}}{2i} \right)}
+	      \\
+	      &amp; =
+	      \cdots = z^2 .
+	      \end{split}
+	    </me>
+	    No <m>\bar{z}</m> anywhere in sight,
+	    so this polynomial is analytic.
+	  </p>
+	</example>
+
+	<example>
+	  <p>
+	    On the other hand
+	    <me>
+	      x^2+y^2 = 
+	      {\left( \frac{z+\bar{z}}{2} \right)}^2 +
+	      {\left( \frac{z-\bar{z}}{2i} \right)}^2 =
+	      \cdots = z \bar{z} .
+	    </me>
+	    So this polynomial is not analytic.
+	  </p>
+	</example>
 
 
       </section>
@@ -1089,74 +1138,130 @@
 	<title>Cauchy-Riemann Equations</title>
 
 	<p>
-	  Let <m>u_x, u_y, ...</m> be the real partial derivatives.
-	  And suppose the derivative exists.
+	  Let <m>u_x, u_y, v_x, v_y</m> be the real partial derivatives
+	  in <m>x</m> and <m>y</m>.  E.g.
 	  <me>
-	    \Re f'(z) =  \Re \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
-	    =
+	    u_x(x,y) = \lim_{\delta \to 0} \frac{u(x+\delta,y)-u(x,y)}{\delta} .
+	  </me>
+	  where the limit is the real limit, that is <m>\delta</m> is real,
+	  not complex.
+	</p>
+
+	<p>
+	  Suppose the complex derivative of <m>f = u+iv</m> exists at
+	  <m>z=x+iy</m>.  When we take the limit as a complex
+	  <m>\Delta \to 0</m>, we might as well let it approach
+	  along the real axis.  That is, we let <m>\Delta = \delta</m>,
+	  for a real <m>\delta</m>:
+	  <me>
+	    \begin{split}
+	    \Re f'(z) &amp; =  \Re \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	    \\
+	    &amp; =
+	    \Re \lim_{\delta \to 0} \frac{f(z+\delta)-f(z)}{\delta}
+	    \\
+	    &amp; =
 	    \lim_{\delta \to 0} \frac{u(x+\delta,y)-u(x,y)}{\delta}
-	    =
-	    \lim_{\delta \to 0} \frac{v(x,y+\delta)-v(x,y)}{\delta}
-	    =
-	    u_x = v_y
-	  </me>
-	  Similarly
-	  <me>
-	    \Im f'(z) =  \Im \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
-	    =
-	    \lim_{\delta \to 0} \frac{v(x+\delta,y)-v(x,y)}{\delta}
-	    =
-	    \lim_{\delta \to 0} -\frac{u(x,y+\delta)-u(x,y)}{\delta}
-	    =
-	    v_x = -u_y
-	  </me>
-	  So
-	  <me>
-	    f'(z) = u_x + iv_x \text{ and }
-	    f'(z) = v_y - iu_y
+	    = u_x(x,y) .
+	    \end{split}
 	  </me>
 	</p>
 
 	<p>
-	  So, that means, if f complex differentiable, then
+	  Next instead of letting <m>\Delta</m> be <m>\delta</m>, we let
+	  <m>\Delta = i \delta</m> for a real <m>\delta</m>.
+	  After all since we're allowed to approach zero in any old way,
+	  we might as well approach along the imaginary axis now.
+	  <me>
+	    \begin{split}
+	    \Re f'(z) &amp; =  \Re \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	    \\
+	    &amp; =
+	    \Re
+	    \lim_{\delta \to 0} \frac{u(x,y+\delta)+iv(x,y+\delta)-u(x,y)-iv(x,y)}{i\delta}
+	    \\
+	    &amp; =
+	    \lim_{\delta \to 0} \frac{v(x,y+\delta)-v(x,y)}{\delta}
+	    =
+	    v_y(x,y) .
+	    \end{split}
+	  </me>
+	</p>
+
+	<p>
+	  Similarly
+	  <me>
+	    \begin{split}
+	    \Im f'(z) &amp; =  \Im \lim_{\Delta \to 0} \frac{f(z+\Delta)-f(z)}{\Delta}
+	    \\
+	    &amp;
+	    =
+	    \lim_{\delta \to 0} \frac{v(x+\delta,y)-v(x,y)}{\delta}
+	    =
+	    \lim_{\delta \to 0} -\frac{u(x,y+\delta)-u(x,y)}{\delta}
+	    \\
+	    &amp; =
+	    v_x (x,y) = -u_y (x,y) .
+	    \end{split}
+	  </me>
+	  So if the complex derivatie exists we find
+	  <me>
+	    f'(z) = u_x (x,y) + iv_x (x,y) \quad \text{and} \quad
+	    f'(z) = v_y (x,y) - iu_y (x,y) .
+	  </me>
+	</p>
+
+	<p>
+	  If <m>f</m> complex differentiable, then the two expressions
+	  for the complex derivative <m>f'(z)</m> must of course be
+	  equal, or in other words:
 	  <me>
 	    u_x = v_y, \qquad
-	    v_x = -u_y
+	    v_x = -u_y .
 	  </me>
+	  These equations are called the
 	  <idx>Cauchy-Riemann equations</idx>
 	  <idx>CR equations</idx>
 	  <term>Cauchy-Riemann</term> (CR) equations.
 	</p>
 
 	<p>
-	  Theorem: f is complex differentiable at a point
-	  if and only if the Cauchy-Riemann equations  hold at that point.
+	  If we apply the above calculation at every point we find one
+	  direction of the following theorem.
 	</p>
 
-	<p>
-	  Theorem: f is analytic
-	  if and only if the Cauchy-Riemann equations hold
-	</p>
+	<theorem>
+	  <p>
+	    A function <m>f</m> defined on a domain <m>U</m> is analytic
+	    if and only if the Cauchy-Riemann equations hold for all points in
+	    <m>U</m>.
+	  </p>
+	</theorem>
 
 	<p>
-	  It is generally much easier to check that a function is analytic if
-	  we check the CR equations then computing the limit.
+	  It is generally much easier to check that a function is analytic 
+	  by checking the
+	  Cauchy-Riemman equations rather than by computing the limit.
 	</p>
 
-	<p>
-	  Example: check for <m>z</m> and <m>\bar{z}</m>, and for <m>e^z
-	  = e^x\cos y +ie^x \sin y</m>
-	</p>
+	<example>
+	  <p>
+	    FIXME: check for <m>z</m> and <m>\bar{z}</m>, and for <m>e^z
+	      = e^x\cos y +ie^x \sin y</m>
+	  </p>
+	</example>
 
-	<p>
-	  Example: Expand around a point <m>f(0)+az + b\bar{z} + ...</m>.  So
-	  CR imply no <m>\bar{z}</m>
-	</p>
+	<example>
+	  <p>
+	    Expand around a point <m>f(0)+az + b\bar{z} + ...</m>.  So
+	    CR imply no <m>\bar{z}</m>
+	  </p>
+	</example>
 
       </section>
 
       <section xml:id="elemfuncs">
-	<title>Elementary functions</title>
+	<title>Elementary Functions</title>
 
 	<p>
 	  The first type of elementary functions we discuss are the 
@@ -1359,14 +1464,17 @@
     </chapter>
 
     <chapter xml:id="harmfuncschap">
-      <title>Harmonic functions</title>
+      <title>Harmonic Functions</title>
 
       <section xml:id="harmfuncssec">
-        <title>Harmonic functions</title>
+        <title>Harmonic Functions</title>
 
 	<p>
 	  A function <m>u</m> in the plane is harmonic if it satisfies
-	  <m>\Delta u = u_{xx}+u_{yy} = 0</m>.  Harmonic functions come up
+	  the <idx>Laplace equation</idx><term>Laplace equation</term>
+	  <me>
+	    \Delta u = u_{xx}+u_{yy} = 0 .</me>
+	  Harmonic functions come up
 	  in many energy minimizing steady state problems, for example in
 	  solving for the stady state heat distribution in a medium.
 	</p>
@@ -1386,22 +1494,28 @@
 	  That is, harmonic functions are all saddle surfaces at best.
 	</p>
 
+	<theorem>
+	  <p>
+	    The real and imaginary parts of an analytic function are
+	    harmonic.
+	  </p>
+	</theorem>
+
 	<p>
-	  Thm: real and imaginary parts of an analytic function are
-	  harmonic.
-	  FIXME: differentiate CR equations to obtain harmonic equations for
-	  both <m>u</m> and <m>v</m>.
+	  To see the theorem, we take the Cauchy Riemann equations
 	  <me>
-	    u_x = v_y, 
-	    u_y = - v_x
+	    u_x = v_y, \qquad
+	    u_y = - v_x ,
 	  </me>
+	  and we differentiate them.  The first equation we differentiate
+	  in <m>x</m> and the second we differentiate in <m>y</m>:
 	  <me>
-	    u_{xx} = v_{xy}, 
-	    u_{yy} = - v_{xy}
+	    u_{xx} = v_{xy}, \qquad
+	    u_{yy} = - v_{xy} .
 	  </me>
 	  So
 	  <me>
-	    u_{xx} + u_{yy} = v_{xy} - v_{xy} = 0
+	    u_{xx} + u_{yy} = v_{xy} - v_{xy} = 0 .
 	  </me>
 	  Similarly
 	  <me>
@@ -1410,29 +1524,33 @@
 	</p>
 
 	<p>
-	  FIXME: Define <idx>harmonic conjuage</idx><term>harmonic conjugate</term> of <m>u</m>.
+	  FIXME: Define <idx>harmonic conjugate</idx><term>harmonic conjugate</term> of <m>u</m>.
 	</p>
 
-	<p>
-	  Example: <m>u = x^2-y^2</m> is harmonic.
-	  Then as <m>u_x = v_y</m>, then
-	  <me>
-	    2x = v_y
-	  </me>
-	  so perhaps <m>v = 2xy</m> would work?  It satisfies
-	  <m>u_x = v_y</m> of course, and we can also check that it satisfies
-	  <m>u_y = -v_x</m>.
-	</p>
+	<example>
+	  <p>
+	    Example: <m>u = x^2-y^2</m> is harmonic.
+	    Then as <m>u_x = v_y</m>, then
+	    <me>
+	      2x = v_y
+	    </me>
+	    so perhaps <m>v = 2xy</m> would work?  It satisfies
+	    <m>u_x = v_y</m> of course, and we can also check that it satisfies
+	    <m>u_y = -v_x</m>.
+	  </p>
+	</example>
 
-	<p>
-	  Example: <m>\log |z|</m> is harmonic, but no harmonic conjugate
-	  exists in <m>\C \setminus \{ 0 \}</m>.  For example
-	  <me>
-	    \Log z = \log |z| + i \Arg z
-	  </me>
-	  but <m>\Arg z</m> is not defined in the entire punctured plane.
-	  FIXME: DRAW.
-	</p>
+	<example>
+	  <p>
+	    Example: <m>\log \abs{z}</m> is harmonic, but no harmonic conjugate
+	    exists in <m>\C \setminus \{ 0 \}</m>.  For example
+	    <me>
+	      \Log z = \log \abs{z} + i \Arg z
+	    </me>
+	    but <m>\Arg z</m> is not defined in the entire punctured plane.
+	    FIXME: DRAW.
+	  </p>
+	</example>
 
 	<p>
 	  Thm: Suppose <m>R = \{ (x,y) | a \lt x \lt b, c \lt y \lt d
