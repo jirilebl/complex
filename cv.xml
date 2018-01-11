@@ -330,7 +330,9 @@
 	  Notice that this is the expression that appeared in the denominator
 	  of the multiplicative inverse.  It is not hard to see why:
 	  <me>
-	    \frac{1}{z} = \frac{\bar{z}}{z\bar{z}} .
+	    \frac{1}{x+iy} = \frac{1}{z} = \frac{\bar{z}}{z\bar{z}} =
+	    \frac{x-iy}{x^2+y^2} =
+	    \frac{x}{x^2+y^2} - i \frac{y}{x^2+y^2} .
 	  </me>
 	</p>
 	<p>
@@ -342,19 +344,15 @@
 	  there is no way to order the numbers in a way that would play nice
 	  with the algebraic operations.  It is a general fact of math (and
 	  life) that when you find a new object that does something better,
-	  you will also lose something.  There is no such thing ass a free
+	  you will also lose something.  There is no such thing as a free
 	  lunch.
-	</p>
-
-	<p>
-	  FIXME: do a few examples
 	</p>
 
 	<p>
 	  It turns out that by adding <m>i</m> we have not only
 	  solved the equation <m>z^2=-1</m>.  We have ensured that all
 	  polynomial equations have solutions.  This is not easy to see, but it
-	  is true.  In fact, it is true that any polynomial of degree <m>d</m>
+	  is true.  In fact, any polynomial of degree <m>d</m>
 	  must have exactly <m>d</m> roots, though some roots may be repeated.
 	  This is perhaps the main reason why complex analysis is such a powerful
 	  tool.
@@ -369,7 +367,8 @@
 
 	  <p>
 	    The real numbers are geometrically represented by an infinite
-	    number line, <idx>real line</idx><em>the real line</em>, the complex numbers are a pair
+	    number line, <idx>real line</idx><em>the real line</em>.
+	    The complex numbers are a pair
 	    of real numbers, and as such can be represented by a two
 	    dimensional plane.  That is, if <m>z=x+iy</m>, then <m>z</m> can be
 	    represented by the point <m>(x,y)</m> on the plane.
@@ -424,6 +423,8 @@
 	    <me>
 	      \abs{z-w} = \sqrt{{(x-a)}^2+{(y-b)}^2} .
 	    </me>
+	    For example, the distance between <m>1-2i</m> and <m>-3+3i</m>
+	    is <m>\abs{(1-2i)-(-3+3i)} = \abs{4-5i} = \sqrt{41}</m>.
 	  </p>
 
 	  <p>
@@ -466,22 +467,45 @@
 
 	  <p>
 	    A vector is described by two quantities, a direction and a
-	    magnitude.  We have the magnitude, that is the modulus.  In a two
-	    dimensional plane a direction can be described by an angle.  So let
+	    magnitude.  We have the magnitude, that is the modulus.  In a two-dimensional plane
+	    a direction can be described by an angle.  So let
 	    the <idx>argument</idx><term>argument</term> of <m>z</m> be the angle that the vector
 	    of <m>z</m> makes with the positive real axis.  We will use a
-	    positive number if the angle is in the counterclockwise direction.
+	    positive number if the angle is in the counterclockwise direction,
+	    and a negative number if the angle is in the clockwise direction.
 	    The modulus and the argument are simply the two numbers describing the
 	    point <m>z</m> using polar coordinates.
 	  </p>
 
 	  <p>
-	    FIXME: draw
+	    FIXME: draw including the examples below
 	  </p>
 
 	  <p>
-	    As we are really just looking at polar coordinates we notice that
-	    if <m>z=x+iy</m> is of modulus <m>r</m> and argument <m>\theta</m>,
+	    So the argument of a positive real number is 0.  The argument of
+	    <m>i</m> is <m>\frac{\pi}{2}</m>.  The argument of
+	    <m>1+i</m> is <m>\frac{\pi}{4}</m>.  The argument of <m>-i</m> is
+	    <m>\frac{-\pi}{2}</m>.  And the argument of a negative real
+	    number is <m>\pi</m> or <m>-\pi</m>.
+	  </p>
+
+	  <p>
+	    Notice that the angle is not unique.  For example <m>i</m>
+	    could also have argument <m>\frac{\pi}{2}+2\pi = \frac{5
+	      \pi}{2}</m>, which just means we go once more around the origin
+	    in the counterclockwise direction.  Or we may have that
+	    the argument is <m>\frac{-3\pi}{2}</m> if we go in the opposite
+	    direction.  See figure FIXME.
+	  </p>
+
+	  <p>
+	    FIXME: draw figure
+	  </p>
+
+	  <p>
+	    We are really just looking at polar coordinates that you
+	    know and love from calculus. 
+	    If <m>z=x+iy</m> is of modulus <m>r</m> and argument <m>\theta</m>,
 	    then
 	    <me>
 	      x = r \cos \theta, \qquad
@@ -511,8 +535,12 @@
 	    to restrict it to a range in which it is unique.  Since adding <m>2\pi</m>
 	    changes nothing, it is always possible to give the argument <m>\theta</m>
 	    such that <m>-\pi \lt \theta \leq \pi</m>.  We call this number the
-	    <idx>principal value</idx><term>principal value</term> or
-	    <idx>principal branch</idx><term>principal branch</term> of the argument and to distinguish we usually
+	    <idx>principal value</idx><term>principal value</term><fn>Some
+	      authors prefer the principlan value to be <m>0 \leq \theta \lt
+		2\pi</m>, although this turns out to be inconvenient in some
+	      calculations.</fn>
+	    or <idx>principal branch</idx><term>principal branch</term>
+	    of the argument and to distinguish we usually
 	    write it as <m>\Arg z</m> rather than just <m>\arg z</m>.
 	  </p>
 	</subsection>
