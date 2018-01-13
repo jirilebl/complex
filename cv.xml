@@ -331,7 +331,7 @@
 	  <me>
 	    z\bar{z} = (x+iy)(x-iy) = x^2+y^2 .
 	  </me>
-	  Notice that this is the expression that appeared in the denominator
+	  This expression appeared in the denominator
 	  of the multiplicative inverse.  It is not hard to see why:
 	  <me>
 	    \frac{1}{x+iy} = \frac{1}{z} = \frac{\bar{z}}{z\bar{z}} =
@@ -340,7 +340,7 @@
 	  </me>
 	</p>
 	<p>
-	  And while it seems that we have just made real numbers better,
+	  While it seems that we have just made real numbers better,
 	  there is one thing that we did lose.  Real numbers are
 	  <em>ordered</em> in a nice way, that is, given two distinct real
 	  numbers <m>x</m> and <m>y</m>, then either <m>x\lt y</m> or <m>y\lt
@@ -361,6 +361,21 @@
 	  This is perhaps the main reason why complex analysis is such a powerful
 	  tool.
 	</p>
+
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="cplxplanesec">
@@ -540,7 +555,7 @@
 	    changes nothing, it is always possible to give the argument <m>\theta</m>
 	    such that <m>-\pi \lt \theta \leq \pi</m>.  We call this number the
 	    <idx>principal value</idx><term>principal value</term><fn>Some
-	      authors prefer the principlan value to be <m>0 \leq \theta \lt
+	      authors prefer the principal value to be <m>0 \leq \theta \lt
 		2\pi</m>, although this turns out to be inconvenient in some
 	      calculations.</fn>
 	    or <idx>principal branch</idx><term>principal branch</term>
@@ -548,6 +563,21 @@
 	    write it as <m>\Arg z</m> rather than just <m>\arg z</m>.
 	  </p>
 	</subsection>
+
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="cplxexpsec">
@@ -558,30 +588,31 @@
 	  <title>Exponential</title>
 
 	  <p>
-	    If <m>z</m> has modulus <m>r</m> and argument <m>\theta</m> then we can write
+	    If <m>z</m> has modulus <m>r</m> and argument <m>\theta</m> then we write
+	    (using the polar coordinates)
 	    <me>
-	      z= r (\cos \theta + i \sin \theta ) .
+	      z= r \cos \theta + i r \sin \theta = r (\cos \theta + i \sin \theta ) .
 	    </me>
 	    Let us give a name to the expression in the parenthesis.  Let us write
 	    <me>
 	      e^{i \theta} = \cos \theta + i \sin \theta .
 	    </me>
-	    This extends the definition of the exponential to the imaginary numbers.  To extend to all
+	    This extends the definition of the exponential to the imaginary numbers.  To extend the
+	    exponential to all
 	    complex numbers, we recall the laws of exponents and we wish our new extension to also satisfy
-	    these laws.  It therefore makes sense to define for <m>z=x+iy</m>:
+	    these laws.  It therefore makes sense to define the exponential for <m>z=x+iy</m> as:
 	    <me>
 	      e^z = e^{x+iy} = e^x e^{iy} = e^x ( \cos y + i \sin y ) .
 	    </me>
-	  </p>
-
-	  <p>
-	    FIXME: examples
+	    For example, <m>e^{1+i\pi} = e^1 (\cos \pi + i \sin \pi) = -e</m>,
+	    or <m>e^{2-9i} = e^2 (\cos 9 + i \sin 9) = e^2 \cos 9 + i e^2 \sin 9</m>.
 	  </p>
 
 	  <p>
 	    The exponential satisfies many useful properties.  Let us list some
 	    that are easy to verify from the definition and from properties of
 	    the real exponential, the sine, and the cosine.
+	    Let <m>z</m> and <m>w</m> be complex numbers.  Then,
 	    <me>
 	      e^{z+w} = e^ze^w, \qquad
 	      e^{-w} = \frac{1}{e^w}, \qquad
@@ -597,6 +628,8 @@
 	      e^{z-2\pi i} = e^{z+4\pi i} = 
 	      e^{z+2k\pi i} .
 	    </me>
+	    The last equality follow because cosine and sine are
+	    <m>2\pi</m>-periodic.
 	  </p>
 
 	  <p>
@@ -641,15 +674,16 @@
 	    </me>
 	    Clearly <m>z=1</m> is a solution.  But we claim there are always
 	    exactly <m>d</m> distinct solutions.  First let us see what happens
-	    when we take a power.  Write <m>z = r e^{i \theta}</m>.  Then
+	    when we take a power of a complex number.
+	    Write <m>z = r e^{i \theta}</m>.  Then
 	    <me>
 	      z^d = r^d {(e^{i \theta})}^d = r^d e^{id\theta} .
 	    </me>
-	    So now suppose that
+	    Suppose 
 	    <me>
 	      z^d = r^d e^{id\theta}  = 1 .
 	    </me>
-	    Two points in the plane are equal means their moduli (distance to origin)
+	    Two points in the plane are equal if and only if their moduli (distance to origin)
 	    are equal, so <m>r^d = 1</m>, and there is only one nonnegative real number
 	    <m>r</m> solving this equation, and that is <m>r=1</m>.
 	  </p>
@@ -663,21 +697,21 @@
 	      d\theta = 2k \pi, \qquad \text{or} \qquad
 	      \theta = \frac{k}{d} 2 \pi .
 	    </me>
-	    We notice that for <m>k=0,1,2,\ldots,d-1</m> we obtain different <m>\theta</m>
+	    For <m>k=0,1,2,\ldots,d-1</m> we obtain different <m>\theta</m>
 	    between <m>0</m> and <m>2\pi</m>.  For any other <m>k</m> we could add and subtract
 	    a multiple of <m>2\pi</m> and get into the previous situation.  Hence the
 	    <m>\theta</m> are
 	    <me>
-	      0 , \frac{1}{d} 2 \pi ,
-	      \frac{2}{d} 2 \pi ,
-	      \ldots,
-	      \frac{d-1}{d} 2 \pi .
+	      0 , ~ \frac{1}{d}\, 2 \pi , ~
+	      \frac{2}{d} \, 2 \pi , ~
+	      \ldots, ~
+	      \frac{d-1}{d} \, 2 \pi .
 	    </me>
 	    In other words, the <m>d</m> roots are
 	    <me>
-	      1, e^{i2\pi/d},
-	      e^{i4\pi/d},
-	      \ldots,
+	      1, ~ e^{i2\pi/d}, ~
+	      e^{i4\pi/d}, ~
+	      \ldots, ~
 	      e^{i2(d-1)\pi/d} .
 	    </me>
 	    These are called the <m>d</m>th <idx>roots of unity</idx><term>roots of unity</term>.
@@ -698,6 +732,20 @@
 	  </p>
 	</subsection>
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="cplxsubsetsec">
@@ -706,35 +754,67 @@
 	<p>
 	  Before we study functions on the complex plane, we need to have language to describe
 	  subsets in the complex plane, as functions are often not going to
-	  be defined on the entire plane.  Sets are often described the in
+	  be defined on the entire plane.  You have most likely seen some of this terminology before,
+	  but let us set it down in this section.  A <idx>set</idx><term>set</term> is a collection of objects
+	  such as points.  For example, the complex numbers <m>\C</m> is a
+	  set.  A <idx>subset of the complex plane</idx><term>subset of the complex plane</term>
+	  is then a collection of complex numbers.
+	  Sets are often described the in
 	  the notation:
 	  <me>
 	    X = \{ z \in \C : \text{some condition on } z \} .
 	  </me>
 	  which translates to the set of all <m>z</m> that satisfies the
-	  condition given.  FIXME: We use the notation <m>X \subset \C</m>.
-	  FIXME: also the notation <m>z \in X</m>.
+	  condition given.  For example,
+	  <me>
+	    \D = \{ z \in \C : \abs{z} &lt; 1 \} 
+	  </me>
+	  is the <idx>unit disc</idx><term>unit disc</term>, that is, the set
+	  of points what are at most distance 1 from the origin.
+	  FIXME: draw.
 	</p>
 
 	<p>
-	  FIXME: Some examples
-	  FIXME: <idx>complement</idx><term>complement</term>
+	  To say that a point <m>z</m> is in the set <m>X</m> we write <m>z
+	    \in X</m>, and we say <m>z</m> is an <idx>element</idx><term>element</term> of <m>X</m>.  Similarly
+	  when <m>z</m> is not in <m>X</m>, then we write <m>z \notin X</m>.
+	  For example, <m>0 \in \D</m>, <m>\frac{1+i}{2} \in \D</m>, but <m>1+i \notin \D</m>.
+	  When we have two sets <m>X</m> and <m>Y</m> we say
+	  <m>X</m> is a <idx>subset</idx><term>subset</term> of <m>Y</m> whenever every point <m>z</m> that
+	  is in <m>X</m> is also in <m>Y</m>.  In particular, <m>\D \subset
+	    \C</m>.  We will mostly deal with subsets of the complex plane,
+	  that is sets where <m>X \subset \C</m>.
 	</p>
 
 	<p>
-	  A very specific set that is often used is an <m>r</m>-<term>disc</term><idx>disc</idx><idx><m>r</m>-disc</idx>
-	  centered at <m>z_0</m>.
-	  Here <m>r</m> is a
-	  positive real number and <m>z_0</m> is a complex number.  The notation is
-	  <m>\Delta_r(z_0)</m>, fomally
+	  The set
+	  <me>
+	    X^c = \{ z \in \C : z \notin X \}
+	  </me>
+	  is the <idx>complement</idx><term>complement</term> of <m>X</m>.
+	  That is, all the points that are not in <m>X</m>.  For example,
+	  <me>
+	    \D^c = \{ z \in \C : \abs{z} \geq 1 \} .
+	  </me>
+	</p>
+
+	<p>
+	  It is often useful to have discs of other radii, centered at other
+	  points.
+	  Take 
+	  <m>r</m> to be a positive real number and <m>z_0</m> a complex number.
+	  An <term><m>r</m>-disc</term><idx>disc</idx><idx><m>r</m>-disc</idx>
+	  centered at <m>z_0</m> is the set defined by
 	  <me>
 	    \Delta_r(z_0) = \{ z \in \C : \abs{z-z_0} \lt r \} .
 	  </me>
+	  That is, all the points that are at most distance <m>r</m> from
+	  <m>z_0</m>.
 	  FIXME: draw
 	</p>
 
 	<p>
-	  FIXME: Similarly we have the <term>punctured disc</term><idx>punctured disc</idx>.
+	  Similarly we define the <term>punctured disc</term><idx>punctured disc</idx>.
 	  The notation is
 	  <m>\Delta_r^*(z_0)</m>, fomally
 	  <me>
@@ -742,7 +822,7 @@
 	  </me>
 	  The difference is that 
 	  <m>\Delta_r^*(z_0)</m> does not include <m>z_0</m>.
-	  FIXME: draw
+	  FIXME: draw?
 	</p>
 
 	<p>
@@ -776,6 +856,20 @@
 	  FIXME: examples
 	</p>
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
     </chapter>
@@ -855,6 +949,20 @@
 	  FIXME
 	</p>
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="limitssec">
@@ -899,23 +1007,25 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    Suppose <m>f(z) \to L</m> and <m>g(z)\to M</m> as
-	    <m>z \to z_0</m>.
-	    Then as
-	    <m>z \to z_0</m>.
-	    <ol>
-	      <li>
-		<m>f(z)+g(z) \to L+M</m>
-	      </li>
-	      <li>
-		<m>f(z)g(z) \to LM</m>
-	      </li>
-	      <li>
-		If <m>M\not=0</m>, then <m>\frac{f(z)}{g(z)} \to \frac{L}{M}.</m>
-	      </li>
-	    </ol>
-	  </p>
+	  <statement>
+	    <p>
+	      Suppose <m>f(z) \to L</m> and <m>g(z)\to M</m> as
+	      <m>z \to z_0</m>.
+	      Then as
+	      <m>z \to z_0</m>.
+	      <ol>
+		<li>
+		  <m>f(z)+g(z) \to L+M</m>
+		</li>
+		<li>
+		  <m>f(z)g(z) \to LM</m>
+		</li>
+		<li>
+		  If <m>M\not=0</m>, then <m>\frac{f(z)}{g(z)} \to \frac{L}{M}.</m>
+		</li>
+	      </ol>
+	    </p>
+	  </statement>
 	</theorem>
 
 	<p>
@@ -925,16 +1035,16 @@
 	  <m>1/z</m>, <m>z\to 0</m>, note that if <m>z = re^{i\theta}</m>
 	  then <m>1/z = (1/r)e^{-i\theta}</m>, so
 	  <me>
-	    |1/z - L| = |(1/r)e^{-i\theta}-L| \geq
-	    |(1/r)e^{-i\theta}| - |L|
+	    \abs{\frac{1}{z} - L} = \abs{\frac{1}{r}\,e^{-i\theta}-L} \geq
+	    \abs{\frac{1}{r}\,e^{-i\theta}} - \abs{L}
 	    =
-	    1/r - |L|
+	    \frac{1}{r} - \abs{L}
 	  </me>
 	  so
 	  <me>
-	    |1/z - L| + |L| \geq 1/r \to \infty
+	    \abs{\frac{1}{z} - L} + \abs{L} \geq \frac{1}{r} \to \infty .
 	  </me>
-	  So <m>|1/z - L|</m> not only doesn't go to zero, it becomes
+	  So <m>\abs{\frac{1}{z} - L}</m> not only doesn't go to zero, it becomes
 	  arbitrarily large.
 	</p>
 
@@ -963,10 +1073,12 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    If <m>f</m> and <m>g</m> are continuous so is <m>f+g</m>, <m>fg</m>,
-	    <m>\frac{f}{g}</m> (provided <m>g</m> is not zero).
-	  </p>
+	  <statement>
+	    <p>
+	      If <m>f</m> and <m>g</m> are continuous so is <m>f+g</m>, <m>fg</m>,
+	      <m>\frac{f}{g}</m> (provided <m>g</m> is not zero).
+	    </p>
+	  </statement>
 	</theorem>
 
 	<p>
@@ -975,10 +1087,12 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    If <m>f</m> is continuous at <m>z_0</m> and <m>g</m> is continuous at <m>f(z_0)</m>,
-	    then the composition <m>g \circ f</m> is continuous at <m>z_0</m>.
-	  </p>
+	  <statement>
+	    <p>
+	      If <m>f</m> is continuous at <m>z_0</m> and <m>g</m> is continuous at <m>f(z_0)</m>,
+	      then the composition <m>g \circ f</m> is continuous at <m>z_0</m>.
+	    </p>
+	  </statement>
 	</theorem>
 
 	<p>
@@ -986,11 +1100,27 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    <m>f = u+iv</m> is continuous if and only <m>u</m> and <m>v</m> are continuous.
-	  </p>
+	  <statement>
+	    <p>
+	      <m>f = u+iv</m> is continuous if and only <m>u</m> and <m>v</m> are continuous.
+	    </p>
+	  </statement>
 	</theorem>
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="cplxderivativessec">
@@ -1132,6 +1262,20 @@
 	</example>
 
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="cauchyriemannsec">
@@ -1212,10 +1356,10 @@
 	</p>
 
 	<p>
-	  If <m>f</m> complex differentiable, then the two expressions
+	  If <m>f=u+iv</m> is complex differentiable, then the two expressions
 	  for the complex derivative <m>f'(z)</m> must of course be
 	  equal, or in other words:
-	  <me>
+	  <me xml:id="eq_CR">
 	    u_x = v_y, \qquad
 	    v_x = -u_y .
 	  </me>
@@ -1231,11 +1375,13 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    A function <m>f</m> defined on a domain <m>U</m> is analytic
-	    if and only if the Cauchy-Riemann equations hold for all points in
-	    <m>U</m>.
-	  </p>
+	  <statement>
+	    <p>
+	      A function <m>f</m> defined on a domain <m>U</m> is analytic
+	      if and only if the Cauchy-Riemann equations hold for all points in
+	      <m>U</m>.
+	    </p>
+	  </statement>
 	</theorem>
 
 	<p>
@@ -1246,18 +1392,64 @@
 
 	<example>
 	  <p>
-	    FIXME: check for <m>z</m> and <m>\bar{z}</m>, and for <m>e^z
-	      = e^x\cos y +ie^x \sin y</m>
+	    Let <m>f(z) = z</m>.  Then <m>u(x,y) = x</m> and <m>v(x,y) =
+	      y</m>.  So
+	    <me>
+	      u_x = 1 , \qquad u_y = 0, \qquad v_x = 0, \qquad v_y = 1.
+	    </me>
+	    Clearly the <xref ref="eq_CR">Cauchy-Riemann equations</xref> hold.
+	    So the identity function is analytic.
 	  </p>
 	</example>
 
 	<example>
 	  <p>
-	    Expand around a point <m>f(0)+az + b\bar{z} + ...</m>.  So
-	    CR imply no <m>\bar{z}</m>
+	    Let <m>f(z) = \bar{z}</m>.  Then <m>u(x,y) = x</m> and <m>v(x,y) =
+	      -y</m>.  So
+	    <me>
+	      u_x = 1 , \qquad u_y = 0, \qquad v_x = 0, \qquad v_y = -1.
+	    </me>
+	    The
+	    <xref ref="eq_CR">Cauchy-Riemann equations</xref> do not hold
+	    as <m>u_x \not= v_u</m>.  The complex conjugate is not analytic.
 	  </p>
 	</example>
 
+	<example>
+	  <p>
+	    Let <m>f(z) = e^z = e^x \cos y + ie^x \sin y</m>, then <m>u(x,y) = e^x \cos y</m> and
+	    <m>v(x,y) = e^x \sin y</m>.  So
+	    <me>
+	      \begin{aligned}
+	      &amp; u_x = e^x \cos y , \qquad u_y = - e^x \sin y, \\
+	      &amp; v_x = e^x \sin y, \qquad v_y = e^x \cos y.
+	      \end{aligned}
+	    </me>
+	    The
+	    <xref ref="eq_CR">Cauchy-Riemann equations</xref> are satisfied,
+	    and the complex exponential is in fact an analytic function.
+	  </p>
+	</example>
+
+	<p>
+	  FIXME: Expand around a point <m>f(0)+az + b\bar{z} + ...</m>.  So
+	  CR imply no <m>\bar{z}</m>
+	</p>
+
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
       <section xml:id="elemfuncs">
@@ -1432,13 +1624,13 @@
 	    \cos (-z) = \cos z, \sin(-z) = - \sin z, 
 	  </me>
 	  <me>
-	    0 = \cos z, \qquad \text{for} z = k \pi
+	    0 = \cos z, \qquad \text{for} z = k \pi ,
 	  </me>
 	  <me>
-	    0 = \sin z, \qquad \text{for} z = k \pi + \pi/2
+	    0 = \sin z, \qquad \text{for} z = k \pi + \frac{\pi}{2} ,
 	  </me>
 	  <me>
-	    (\cos z)^2 + (\sin z)^2 = 1
+	    (\cos z)^2 + (\sin z)^2 = 1 .
 	  </me>
 	  Actually all the standard identities hold.  The moment we have an
 	  identity for all real numbers it turns out it holds for all complex
@@ -1459,6 +1651,20 @@
 	  FIXME: Check differentiation rules for these.
 	</p>
 
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
     </chapter>
@@ -1495,10 +1701,12 @@
 	</p>
 
 	<theorem>
-	  <p>
-	    The real and imaginary parts of an analytic function are
-	    harmonic.
-	  </p>
+	  <statement>
+	    <p>
+	      The real and imaginary parts of an analytic function are
+	      harmonic.
+	    </p>
+	  </statement>
 	</theorem>
 
 	<p>
@@ -1589,6 +1797,21 @@
 	  we have also figured out that any two complex conjugates differ by
 	  a constat (<m>D</m>).
 	</p>
+
+	<exercises>
+	  <title>Exercises</title>
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+
+	  <exercise>
+	    <statement><p>
+		FIXME
+	    </p></statement>
+	  </exercise>
+	</exercises>
       </section>
 
     </chapter>
