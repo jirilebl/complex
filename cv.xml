@@ -1141,7 +1141,7 @@
 	</theorem>
 
 	<p>
-	  Examples: <m>1, z, z^2, \bar{z}</m> any polynomial, <m>e^z</m>,
+	  Examples: <m>1, z, z^2, \bar{z}</m>, any polynomial, <m>e^z</m>,
 	  <m>1/z</m> on <m>\C\setminus \{0\}</m>.
 	</p>
 
@@ -1745,17 +1745,32 @@
 	</p>
 
 	<p>
-	  Examples <m>x, x^2-y^2, xy, ...</m>
+	  Let's do an example, the function <m>u(x,y) = e^x \cos y</m>
+	  is harmonic.  To check compute
+	  <me>
+	    u_{x} = - e^y \sin x, \quad u_{xx} = -e^y \cos x, \quad
+	    u_{y} = e^y \cos x, \quad u_{yy} = e^y \cos x.
+	  </me>
+	  Therefore, <m>u_{xx}+u_{yy} = 0</m>.  Other examples are
+	  <m>x, x^2-y^2, xy, e^y\sin x, e^{2x} \cos(2y), \ldots</m>
 	</p>
 
 	<p>
 	  FIXME: Visualize harmonic functions.
 	</p>
 
+	<theorem>
+	  <title>Maximum principle</title>
+	  <statement>
+	    <p>
+	      If <m>u</m> is harmonic on a domain (connected
+	      open set) <m>D</m> and achieves a maximum in <m>D</m>, then
+	      <m>u</m> is constant.
+	    </p>
+	  </statement>
+	</theorem>
+
 	<p>
-	  Maximum principle: If <m>u</m> is harmonic on a domain (connected
-	  open set) <m>D</m> and achieves a maximum in <m>D</m>, then
-	  <m>u</m> is constant.
 	  That is, harmonic functions are all saddle surfaces at best.
 	</p>
 
@@ -1769,7 +1784,12 @@
 	</theorem>
 
 	<p>
-	  To see the theorem, we take the Cauchy Riemann equations
+	  For example, the <m>u</m> we saw above, that is, <m>e^x \cos y</m>
+	  is the real part of <m>e^z = e^{x+iy} = e^x \cos y + i e^x \sin y</m>.
+	</p>
+
+	<p>
+	  To see the theorem, we take the Cauchy-Riemann equations
 	  <me>
 	    u_x = v_y, \qquad
 	    u_y = - v_x ,
@@ -1791,12 +1811,14 @@
 	</p>
 
 	<p>
-	  FIXME: Define <idx>harmonic conjugate</idx><term>harmonic conjugate</term> of <m>u</m>.
+	  If <m>u</m> is a harmonic function, and <m>v</m> is also harmonic such that <m>u+iv</m>
+	  is analytic, then we say <m>v</m> is a
+	  <idx>harmonic conjugate</idx><term>harmonic conjugate</term> of <m>u</m>.
 	</p>
 
 	<example>
 	  <p>
-	    Example: <m>u = x^2-y^2</m> is harmonic.
+	    For example, <m>u = x^2-y^2</m> is harmonic.
 	    Then as <m>u_x = v_y</m>, then
 	    <me>
 	      2x = v_y
@@ -1805,26 +1827,53 @@
 	    <m>u_x = v_y</m> of course, and we can also check that it satisfies
 	    <m>u_y = -v_x</m>.
 	  </p>
-	</example>
 
-	<example>
 	  <p>
-	    Example: <m>\log \abs{z}</m> is harmonic, but no harmonic conjugate
-	    exists in <m>\C \setminus \{ 0 \}</m>.  For example
-	    <me>
-	      \Log z = \log \abs{z} + i \Arg z
-	    </me>
-	    but <m>\Arg z</m> is not defined in the entire punctured plane.
-	    FIXME: DRAW.
+	    Notice though that we might have also chosen <m>v = 2xy+1</m>, which would also work,
+	    so there isn't a unique harmonic conjugate.  It turns out though, that's the worst
+	    that can happen: we can at worst add a real constant to <m>v</m>.
 	  </p>
 	</example>
 
 	<p>
-	  Thm: Suppose <m>R = \{ (x,y) | a \lt x \lt b, c \lt y \lt d
-	    \}</m> and <m>u</m> is harmonic in <m>R</m>.
-	  Then there exists a harmonic conjugate <m>v</m>
-	  defined on <m>R</m>.
+	  It turns out we can always find a conjugate at least near any point,
+	  but you have to be careful, we can't always find a harmonic conjugate everywhere
+	  as the next example shows.
 	</p>
+
+	<example>
+	  <p>
+	    The function <m>\log \abs{z}</m> is harmonic, but no harmonic conjugate
+	    exists in <m>\C \setminus \{ 0 \}</m>.  For example
+	    <me>
+	      \Log z = \log \abs{z} + i \Arg z
+	    </me>
+	    but remember <m>\Arg z</m> is the principal branch of the argument
+	    and it is not defined in the entire punctured plane.
+	  </p>
+
+	  <p>
+	    FIXME: DRAW.
+	  </p>
+
+	  <p>
+	    We could use another branch of the argument, but we would still not be able
+	    to define the harmonic conjugate of <m>\log \abs{z}</m> in the entire
+	    punctured plane.  As we said above, the harmonic conjugate is unique up to
+	    adding a real constant, so any other conjugate we can try to cook up will
+	    be some branch of the argument plus a real constant.
+	</example>
+
+	<theorem>
+	  <statement>
+	    <p>
+	      Suppose <m>R = \{ (x,y) | a \lt x \lt b, c \lt y \lt d
+	        \}</m> and <m>u</m> is harmonic in <m>R</m>.
+	      Then there exists a harmonic conjugate <m>v</m>
+	      defined on <m>R</m>.
+	    </p>
+	  </statement>
+	</theorem>
 
 	<p>
 	  Let's just compute it:
